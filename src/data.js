@@ -103,6 +103,7 @@ export const PRODUCTS = [
     name: "Snake Plant",
     price: "₹349",
     tint: "#2E7D4F",
+    image: "/plants/Snake_plant.jpg",
     blurb: "Near-indestructible, thrives in low light, waters once a week.",
   },
   {
@@ -110,6 +111,7 @@ export const PRODUCTS = [
     name: "Money Plant",
     price: "₹199",
     tint: "#3FAE6B",
+    image: "/plants/Money_plnat.jpg",
     blurb: "The classic starter plant — grows in soil or water, forgiving of neglect.",
   },
   {
@@ -117,6 +119,7 @@ export const PRODUCTS = [
     name: "Areca Palm",
     price: "₹649",
     tint: "#4CA35A",
+    image: "/plants/Money_plnat.jpg",
     blurb: "Big, breezy fronds that instantly make a corner feel alive.",
   },
   {
@@ -124,6 +127,7 @@ export const PRODUCTS = [
     name: "ZZ Plant",
     price: "₹499",
     tint: "#25573B",
+    image: "/plants/ZZ Plant.jpg",
     blurb: "Glossy leaves, survives inconsistent watering, ideal for offices.",
   },
   {
@@ -131,6 +135,7 @@ export const PRODUCTS = [
     name: "Aloe Vera",
     price: "₹179",
     tint: "#79B978",
+    image: "/plants/Aloevera.png",
     blurb: "Barely needs watering, doubles as a handy home remedy plant.",
   },
   {
@@ -138,6 +143,7 @@ export const PRODUCTS = [
     name: "Peace Lily",
     price: "₹399",
     tint: "#3D8B5F",
+    image: "/plants/peacelily..jpg",
     blurb: "Flowers indoors, tells you exactly when it's thirsty by drooping.",
   },
   {
@@ -145,6 +151,7 @@ export const PRODUCTS = [
     name: "Terracotta Classic",
     price: "₹249",
     tint: "#C4703C",
+    image: "/plants/Terracotta Classic.png",
     blurb: "Breathable clay pot, the reliable everyday choice for most plants.",
   },
   {
@@ -152,6 +159,7 @@ export const PRODUCTS = [
     name: "Matte Ceramic — White",
     price: "₹549",
     tint: "#E8E3D6",
+    image: "/plants/Matte Ceramic_White.jpg",
     blurb: "Clean, minimal finish that works with any interior style.",
   },
   {
@@ -159,6 +167,7 @@ export const PRODUCTS = [
     name: "Hanging Macrame Planter",
     price: "₹399",
     tint: "#B9A27C",
+    image: "/plants/Hanging Macrame Planter.jpg",
     blurb: "Handwoven cotton hanger, perfect for trailing plants near a window.",
   },
   {
@@ -166,6 +175,7 @@ export const PRODUCTS = [
     name: "Textured Cement Planter",
     price: "₹449",
     tint: "#9CA39B",
+    image: "/plants/Textured Cement Planter.png",
     blurb: "Raw, industrial finish — a favourite for balconies and patios.",
   },
   {
