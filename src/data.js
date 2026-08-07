@@ -119,7 +119,7 @@ export const PRODUCTS = [
     name: "Areca Palm",
     price: "₹649",
     tint: "#4CA35A",
-    image: "/plants/Money_plnat.jpg"
+    image: "/plants/Areca Palm.png"
     blurb: "Big, breezy fronds that instantly make a corner feel alive.",
   },
   {
@@ -167,7 +167,7 @@ export const PRODUCTS = [
     name: "Hanging Macrame Planter",
     price: "₹399",
     tint: "#B9A27C",
-    image: "/plants/Hanging Macrame Planter.jpg"
+    image: "/plants/Hanging Macrame Planter.jpeg"
     blurb: "Handwoven cotton hanger, perfect for trailing plants near a window.",
   },
   {
