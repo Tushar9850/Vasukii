@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-const WHATSAPP = "https://wa.me/910000000000";
+const WHATSAPP = "https://wa.me/917905611170";
 const INSTAGRAM = "https://instagram.com/vasukii_officials";
 
 const ITEMS = [
