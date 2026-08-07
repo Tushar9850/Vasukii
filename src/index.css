@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+::selection {
+  background: #e8891f;
+  color: #0a1c13;
+}
+
+/* ---------- animated potted plant (hero) ---------- */
+
+.vas-plant-sway {
+  animation: vasPlantSway 6s ease-in-out 2.6s infinite;
+}
+@keyframes vasPlantSway {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.vas-stem {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: vasStemGrow 2.2s cubic-bezier(0.34, 0.65, 0.25, 1) 0.2s forwards;
+}
+@keyframes vasStemGrow {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.vas-leaf-p {
+  opacity: 0;
+  animation-name: vasLeafIn, vasLeafBob;
+  animation-duration: 0.6s, 4.5s;
+  animation-timing-function: ease-out, ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-fill-mode: forwards, none;
+}
+@keyframes vasLeafIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) rotate(-12deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+@keyframes vasLeafBob {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.vas-flower {
+  opacity: 0;
+  animation: vasFlowerIn 0.7s cubic-bezier(0.34, 1.4, 0.4, 1) 2.7s forwards;
+}
+@keyframes vasFlowerIn {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+.vas-flower-core {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: vasCorePulse 2.4s ease-in-out 3.6s infinite;
+}
+@keyframes vasCorePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.22);
+  }
+}
+
+.vas-spore {
+  opacity: 0;
+  animation-name: vasFloatUp;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes vasFloatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px) translateX(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vas-plant-sway,
+  .vas-stem,
+  .vas-leaf-p,
+  .vas-flower,
+  .vas-flower-core,
+  .vas-spore {
+    animation: none !important;
+    opacity: 1 !important;
+    stroke-dashoffset: 0 !important;
+    transform: none !important;
+  }
+}
+
+/* ---------- vine section dividers ---------- */
+
+.vine-path {
+  fill: none;
+  stroke: #3fae6b;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  transition: stroke-dashoffset 1.6s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+.vine-divider.in-view .vine-path {
+  stroke-dashoffset: 0;
+}
+
+/* ---------- generic scroll reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
