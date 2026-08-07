@@ -8,9 +8,24 @@ function ProductCard({ product }) {
   return (
     <Reveal>
       <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-emerald-900/40 transition-all hover:-translate-y-1 hover:border-emerald-400/50">
-        <div className="flex h-40 items-center justify-center" style={{ backgroundColor: product.tint + "22" }}>
-          <div className="h-16 w-16 rounded-full" style={{ backgroundColor: product.tint }}></div>
+        
+        {/* ================= EDIT LOCATION 1 ================= */}
+        {/* Image container: Displays plant image if product.image exists, otherwise uses tint fallback */}
+        <div className="relative h-48 w-full overflow-hidden" style={{ backgroundColor: product.tint + "22" }}>
+          {product.image ? (
+            <img
+              src={product.image}
+              alt={product.name}
+              className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center">
+              <div className="h-16 w-16 rounded-full" style={{ backgroundColor: product.tint }}></div>
+            </div>
+          )}
         </div>
+        {/* ==================================================== */}
+
         <div className="flex flex-1 flex-col p-6">
           <span className="mb-2 inline-block w-fit rounded-full bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-stone-300">
             {product.category}
