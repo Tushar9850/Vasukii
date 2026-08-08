@@ -119,7 +119,7 @@ export const PRODUCTS = [
     name: "Areca Palm",
     price: "₹649",
     tint: "#4CA35A",
-    image: "/plants/Areca_Palm.png"
+    image: "/plants/https://github.com/Tushar9850/Vasukii/blob/main/public/plants/Areca%20Palm.png"
     blurb: "Big, breezy fronds that instantly make a corner feel alive.",
   },
   {
