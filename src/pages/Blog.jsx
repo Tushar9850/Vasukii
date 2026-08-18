@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Eyebrow, Reveal } from "../components/UI.jsx";
 import { BLOG_CATEGORIES, BLOG_POSTS } from "../data.js";
 import { WHATSAPP, INSTAGRAM } from "../components/Nav.jsx";
+import SEO from "../components/SEO.jsx";
 
 export default function Blog() {
   const [active, setActive] = useState("All");
@@ -9,6 +10,11 @@ export default function Blog() {
 
   return (
     <>
+      <SEO
+        title="Blog — Plant Care & Garden Guides"
+        description="Care guides, honest project breakdowns, and the environmental case for going a little greener — from the Vasukii journal."
+        path="/blog"
+      />
       <header className="relative overflow-hidden px-6 pb-14 pt-20 sm:pt-24">
         <div className="relative mx-auto max-w-3xl text-center">
           <Eyebrow>From the Vasukii journal</Eyebrow>

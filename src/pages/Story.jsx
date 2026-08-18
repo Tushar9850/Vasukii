@@ -1,6 +1,7 @@
 import React from "react";
 import { Eyebrow, Reveal, VineDivider } from "../components/UI.jsx";
 import { WHATSAPP } from "../components/Nav.jsx";
+import SEO from "../components/SEO.jsx";
 
 const ROADMAP = [
   {
@@ -28,6 +29,11 @@ const ROADMAP = [
 export default function Story() {
   return (
     <>
+      <SEO
+        title="Our Story"
+        description="Named after Vasuki, king of serpents from the Samudra Manthan — the story of why Vasukii exists and the roadmap from Lucknow to beyond."
+        path="/story"
+      />
       <header className="relative overflow-hidden px-6 pb-20 pt-20 sm:pt-24">
         <div
           className="pointer-events-none absolute -left-40 -top-40 h-[520px] w-[520px] rounded-full"

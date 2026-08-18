@@ -3,10 +3,35 @@ import { Link } from "react-router-dom";
 import { Eyebrow, Reveal, VineDivider, AnimatedPlant } from "../components/UI.jsx";
 import { PILLARS } from "../data.js";
 import { WHATSAPP, INSTAGRAM } from "../components/Nav.jsx";
+import SEO, { SITE_URL } from "../components/SEO.jsx";
+
+const LOCAL_BUSINESS_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "GardenStore",
+  name: "Vasukii",
+  description:
+    "Vasukii brings local plants, pots, on-demand gardening, and custom plant wall design onto one platform — starting in Lucknow.",
+  url: SITE_URL,
+  image: `${SITE_URL}/vasukii-logo.png`,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lucknow",
+    addressRegion: "Uttar Pradesh",
+    addressCountry: "IN",
+  },
+  areaServed: "Lucknow, Uttar Pradesh",
+  priceRange: "₹₹",
+};
 
 export default function Home() {
   return (
     <>
+      <SEO
+        title="Plants, Pots & Garden Care in Lucknow"
+        description="Vasukii brings local plants, pots, on-demand gardening, and custom plant wall design onto one platform — starting in Lucknow."
+        path="/"
+        jsonLd={LOCAL_BUSINESS_JSON_LD}
+      />
       <header className="relative overflow-hidden px-6 pb-28 pt-20 sm:pt-24">
         <div
           className="pointer-events-none absolute -right-40 -top-52 h-[640px] w-[640px] rounded-full"

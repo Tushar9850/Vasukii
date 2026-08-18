@@ -2,10 +2,16 @@ import React from "react";
 import { Eyebrow, Reveal, VineDivider } from "../components/UI.jsx";
 import { PILLARS, STEPS } from "../data.js";
 import { WHATSAPP } from "../components/Nav.jsx";
+import SEO from "../components/SEO.jsx";
 
 export default function WhatWeDo() {
   return (
     <>
+      <SEO
+        title="What We Do"
+        description="Plants and pots, on-demand gardening, and custom plant wall design — three ways Vasukii shows up for your space in Lucknow."
+        path="/what-we-do"
+      />
       <header className="relative overflow-hidden px-6 pb-16 pt-20 sm:pt-24">
         <div className="relative mx-auto max-w-3xl text-center">
           <Eyebrow>What we do</Eyebrow>

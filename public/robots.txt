@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vasukii-m6hf.vercel.app/sitemap.xml

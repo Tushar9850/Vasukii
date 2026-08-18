@@ -2,6 +2,30 @@ import React, { useState } from "react";
 import { Eyebrow, Reveal } from "../components/UI.jsx";
 import { PRODUCTS, SHOP_CATEGORIES } from "../data.js";
 import { WHATSAPP } from "../components/Nav.jsx";
+import SEO, { SITE_URL } from "../components/SEO.jsx";
+
+const SHOP_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Vasukii Plant & Pot Shop",
+  itemListElement: PRODUCTS.slice(0, 30).map((p, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "Product",
+      name: p.name,
+      description: p.blurb,
+      category: p.category,
+      ...(p.image ? { image: `${SITE_URL}${p.image}` } : {}),
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "INR",
+        price: (p.price || "").replace(/[₹,]/g, ""),
+        availability: "https://schema.org/InStock",
+      },
+    },
+  })),
+};
 
 function ProductCard({ product }) {
   const message = encodeURIComponent(`Hi Vasukii! I'd like to order: ${product.name} (${product.price}).`);
@@ -55,6 +79,12 @@ export default function Shop() {
 
   return (
     <>
+      <SEO
+        title="Shop Plants & Pots Online"
+        description="Fragrant, lucky & Vastu, medicinal, indoor air-purifying, flowering, fruit, and bonsai plants — plus pots and combos, delivered in Lucknow."
+        path="/shop"
+        jsonLd={SHOP_JSON_LD}
+      />
       <header className="relative overflow-hidden px-6 pb-14 pt-20 sm:pt-24">
         <div className="relative mx-auto max-w-3xl text-center">
           <Eyebrow>Plants &amp; pots</Eyebrow>

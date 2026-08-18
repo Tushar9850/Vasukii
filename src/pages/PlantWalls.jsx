@@ -2,12 +2,18 @@ import React from "react";
 import { Eyebrow, Reveal, VineDivider } from "../components/UI.jsx";
 import { PLANT_WALL_PACKAGES, PLANT_WALL_PROCESS } from "../data.js";
 import { WHATSAPP } from "../components/Nav.jsx";
+import SEO from "../components/SEO.jsx";
 
 const GALLERY_TINTS = ["#2E7D4F", "#C4703C", "#3FAE6B", "#9CA39B", "#4CA35A", "#E8891F"];
 
 export default function PlantWalls() {
   return (
     <>
+      <SEO
+        title="Custom Plant Walls & Garden Design"
+        description="Custom gardens and vertical plant walls for homes and offices in Lucknow, designed and installed end to end by Vasukii."
+        path="/plant-walls"
+      />
       <header className="relative overflow-hidden px-6 pb-16 pt-20 sm:pt-24">
         <div
           className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full"
