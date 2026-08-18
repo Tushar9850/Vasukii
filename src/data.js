@@ -95,63 +95,390 @@ export const BLOG_POSTS = [
 
 /* ---------------- shop: plants & pots ---------------- */
 
-export const SHOP_CATEGORIES = ["All", "Plants", "Pots", "Combos"];
+export const SHOP_CATEGORIES = [
+  "All",
+  "Fragrance & Aromatic",
+  "Lucky & Vastu",
+  "Medicinal & Herbal",
+  "Indoor & Air-Purifying",
+  "Flowering Ornamental",
+  "Fruit Plants",
+  "Cacti, Succulents & Bonsai",
+  "Pots",
+  "Combos",
+];
 
 export const PRODUCTS = [
+  /* ---- Fragrance & Aromatic Plants (सुगंधित पौधे) ---- */
   {
-    category: "Plants",
-    name: "Snake Plant",
-    price: "₹349",
-    tint: "#2E7D4F",
-    image: "/plants/Snake_plant.jpg"
-    blurb: "Near-indestructible, thrives in low light, waters once a week.",
+    category: "Fragrance & Aromatic",
+    name: "Mogra (Arabian Jasmine)",
+    price: "₹299",
+    tint: "#E8E6D9",
+    blurb: "Small white blooms with a heavy, classic jasmine scent — flowers through summer.",
   },
   {
-    category: "Plants",
+    category: "Fragrance & Aromatic",
+    name: "Raat ki Rani (Cestrum nocturnum)",
+    price: "₹279",
+    tint: "#D8D6C2",
+    blurb: "Night-blooming shrub that fills the whole garden with fragrance after dusk.",
+  },
+  {
+    category: "Fragrance & Aromatic",
+    name: "Champa (Plumeria)",
+    price: "₹449",
+    tint: "#F2D9B8",
+    blurb: "Fragrant five-petal blooms on a hardy, low-maintenance flowering tree.",
+  },
+  {
+    category: "Fragrance & Aromatic",
+    name: "Madhumalti (Rangoon Creeper)",
+    price: "₹329",
+    tint: "#E7A9C4",
+    blurb: "Fast-growing fragrant climber — flowers shift from white to pink to red.",
+  },
+  {
+    category: "Fragrance & Aromatic",
+    name: "Desi & English Roses (Gulab)",
+    price: "₹249",
+    tint: "#D95D6B",
+    blurb: "Classic garden roses in desi and English varieties, sold as budded saplings.",
+  },
+  {
+    category: "Fragrance & Aromatic",
+    name: "Parijat (Night-flowering Jasmine)",
+    price: "₹399",
+    tint: "#EFE4D0",
+    blurb: "Sacred flowering tree — soft orange-white blooms that drop fragrant at dawn.",
+  },
+  {
+    category: "Fragrance & Aromatic",
+    name: "Kewra",
+    price: "₹549",
+    tint: "#6FA97A",
+    blurb: "Screw pine valued for its intensely fragrant flowers, used in perfumery and food.",
+  },
+  {
+    category: "Fragrance & Aromatic",
+    name: "Aromatic Herb Combo (Rosemary, Lemongrass, Mint)",
+    price: "₹399",
+    tint: "#5FA35F",
+    blurb: "Three kitchen-friendly aromatic herbs in one set — rosemary, lemongrass and pudina.",
+  },
+
+  /* ---- Lucky & Vastu Plants (शुभ और वास्तु पौधे) ---- */
+  {
+    category: "Lucky & Vastu",
+    name: "Lucky Bamboo",
+    price: "₹249",
+    tint: "#6FAE5C",
+    blurb: "Grows in water or soil — a classic gifting plant believed to bring good fortune.",
+  },
+  {
+    category: "Lucky & Vastu",
     name: "Money Plant",
     price: "₹199",
     tint: "#3FAE6B",
-    image: "/plants/Money_plnat.jpg"
+    image: "/plants/Money_plnat.jpg",
     blurb: "The classic starter plant — grows in soil or water, forgiving of neglect.",
   },
   {
-    category: "Plants",
+    category: "Lucky & Vastu",
+    name: "Jade Plant (Crassula ovata)",
+    price: "₹229",
+    tint: "#4E9B6B",
+    blurb: "Thick, coin-shaped leaves — a popular succulent gift for good luck and prosperity.",
+  },
+  {
+    category: "Lucky & Vastu",
+    name: "Tulsi (Holy Basil)",
+    price: "₹149",
+    tint: "#5C8A4A",
+    blurb: "Sacred household plant, easy to grow in a sunny courtyard or balcony pot.",
+  },
+  {
+    category: "Lucky & Vastu",
+    name: "Shami Plant (Prosopis cineraria)",
+    price: "₹349",
+    tint: "#7A9463",
+    blurb: "Traditionally kept for its auspicious significance, especially around Dussehra.",
+  },
+  {
+    category: "Lucky & Vastu",
+    name: "Snake Plant",
+    price: "₹349",
+    tint: "#2E7D4F",
+    image: "/plants/Snake_plant.jpg",
+    blurb: "Near-indestructible, thrives in low light, waters once a week.",
+  },
+  {
+    category: "Lucky & Vastu",
     name: "Areca Palm",
     price: "₹649",
     tint: "#4CA35A",
-    image: "/plants/https://github.com/Tushar9850/Vasukii/blob/main/public/plants/Areca%20Palm.png"
+    image: "/plants/Areca Palm.png",
     blurb: "Big, breezy fronds that instantly make a corner feel alive.",
   },
+
+  /* ---- Medicinal & Herbal Plants (औषधीय पौधे) ---- */
   {
-    category: "Plants",
-    name: "ZZ Plant",
-    price: "₹499",
-    tint: "#25573B",
-    image: "/plants/ZZ Plant.jpg"
-    blurb: "Glossy leaves, survives inconsistent watering, ideal for offices.",
-  },
-  {
-    category: "Plants",
+    category: "Medicinal & Herbal",
     name: "Aloe Vera",
     price: "₹179",
     tint: "#79B978",
-    image: "/plants/Aloevera.png"
+    image: "/plants/Aloevera.png",
     blurb: "Barely needs watering, doubles as a handy home remedy plant.",
   },
   {
-    category: "Plants",
+    category: "Medicinal & Herbal",
+    name: "Neem Tree (Azadirachta indica)",
+    price: "₹399",
+    tint: "#5A8352",
+    blurb: "Hardy medicinal tree, leaves and bark long used in traditional home remedies.",
+  },
+  {
+    category: "Medicinal & Herbal",
+    name: "Giloy (Tinospora cordifolia)",
+    price: "₹249",
+    tint: "#6B8F4E",
+    blurb: "Climbing medicinal vine, commonly grown at home for immunity-boosting use.",
+  },
+  {
+    category: "Medicinal & Herbal",
+    name: "Curry Patta (Kadi Patta / Sweet Neem)",
+    price: "₹229",
+    tint: "#4F7A3E",
+    blurb: "Everyday kitchen herb — fresh curry leaves right off your own balcony plant.",
+  },
+  {
+    category: "Medicinal & Herbal",
+    name: "Ashwagandha",
+    price: "₹279",
+    tint: "#8A9A6E",
+    blurb: "Compact medicinal shrub, easy to grow in a sunny spot with well-drained soil.",
+  },
+  {
+    category: "Medicinal & Herbal",
+    name: "Brahmi",
+    price: "₹199",
+    tint: "#6FA97A",
+    blurb: "Low, spreading herb used in traditional medicine — thrives in moist soil.",
+  },
+  {
+    category: "Medicinal & Herbal",
+    name: "Ajwain Plant (Carom Plant)",
+    price: "₹199",
+    tint: "#7B9E5E",
+    blurb: "Aromatic kitchen-medicinal herb with thick, fleshy, pungent leaves.",
+  },
+  {
+    category: "Medicinal & Herbal",
+    name: "Tulsi (Medicinal Variety)",
+    price: "₹149",
+    tint: "#5C8A4A",
+    blurb: "Ram / Shyama Tulsi grown for its medicinal and immunity-supporting properties.",
+  },
+
+  /* ---- Indoor & Air-Purifying Plants ---- */
+  {
+    category: "Indoor & Air-Purifying",
     name: "Peace Lily",
     price: "₹399",
     tint: "#3D8B5F",
-    image: "/plants/peacelily..jpg"
+    image: "/plants/peacelily..jpg",
     blurb: "Flowers indoors, tells you exactly when it's thirsty by drooping.",
   },
+  {
+    category: "Indoor & Air-Purifying",
+    name: "Spider Plant",
+    price: "₹229",
+    tint: "#4E9B5C",
+    blurb: "Fast-growing, sends out baby plantlets — one of the easiest air-purifiers to keep.",
+  },
+  {
+    category: "Indoor & Air-Purifying",
+    name: "ZZ Plant",
+    price: "₹499",
+    tint: "#25573B",
+    image: "/plants/ZZ Plant.jpg",
+    blurb: "Glossy leaves, survives inconsistent watering, ideal for offices.",
+  },
+  {
+    category: "Indoor & Air-Purifying",
+    name: "Ficus Elastica (Rubber Plant)",
+    price: "₹449",
+    tint: "#2F6B45",
+    blurb: "Broad glossy leaves, grows into a striking statement plant over time.",
+  },
+  {
+    category: "Indoor & Air-Purifying",
+    name: "Aglaonema (Chinese Evergreen)",
+    price: "₹379",
+    tint: "#6E9E5E",
+    blurb: "Patterned foliage in reds and greens, thrives in low indoor light.",
+  },
+  {
+    category: "Indoor & Air-Purifying",
+    name: "Dracaena (Golden / Rikki)",
+    price: "₹349",
+    tint: "#4A7A4A",
+    blurb: "Upright, sculptural foliage plant that tolerates low light and neglect.",
+  },
+  {
+    category: "Indoor & Air-Purifying",
+    name: "Table Kamini",
+    price: "₹329",
+    tint: "#5A8B5A",
+    blurb: "Compact tabletop version of Kamini — small white flowers, mild fragrance.",
+  },
+
+  /* ---- Flowering Ornamental Plants ---- */
+  {
+    category: "Flowering Ornamental",
+    name: "Hibiscus (Gudhal — Local & Hybrid)",
+    price: "₹279",
+    tint: "#D8465C",
+    blurb: "Big, bold blooms almost year-round — available in local and hybrid colours.",
+  },
+  {
+    category: "Flowering Ornamental",
+    name: "Bougainvillea",
+    price: "₹249",
+    tint: "#C64B8A",
+    blurb: "Vigorous flowering climber, covers walls and gates in bright papery bracts.",
+  },
+  {
+    category: "Flowering Ornamental",
+    name: "Adenium (Desert Rose)",
+    price: "₹399",
+    tint: "#D9647C",
+    blurb: "Sculptural swollen trunk with bright trumpet flowers — needs minimal water.",
+  },
+  {
+    category: "Flowering Ornamental",
+    name: "Marigold (Gainda — Seasonal)",
+    price: "₹99",
+    tint: "#E8A93C",
+    blurb: "Cheerful seasonal bedding flower, quick to bloom and easy for beginners.",
+  },
+  {
+    category: "Flowering Ornamental",
+    name: "Petunia (Seasonal)",
+    price: "₹119",
+    tint: "#C25B9E",
+    blurb: "Compact seasonal flowering plant, great for pots, railings and hanging baskets.",
+  },
+  {
+    category: "Flowering Ornamental",
+    name: "Dahlia (Seasonal)",
+    price: "₹199",
+    tint: "#D9536B",
+    blurb: "Show-stopping layered blooms in winter — grown from tubers each season.",
+  },
+  {
+    category: "Flowering Ornamental",
+    name: "Salvia",
+    price: "₹129",
+    tint: "#7A5CA6",
+    blurb: "Tall flower spikes that draw butterflies and bees, blooms through the season.",
+  },
+
+  /* ---- Fruit Plants (फलदार पौधे) ---- */
+  {
+    category: "Fruit Plants",
+    name: "Mango (Dussehri / Langra / Chausa / Amrapali)",
+    price: "₹499",
+    tint: "#8CA33E",
+    blurb: "Grafted saplings of Lucknow's own favourite mango varieties.",
+  },
+  {
+    category: "Fruit Plants",
+    name: "Guava (Allahabadi Safeda)",
+    price: "₹399",
+    tint: "#7BA75E",
+    blurb: "Reliable, fast-fruiting guava variety — grows well in home garden conditions.",
+  },
+  {
+    category: "Fruit Plants",
+    name: "Citrus (Lemon & Kinnow/Narangi)",
+    price: "₹349",
+    tint: "#B7C24A",
+    blurb: "Compact citrus saplings, good for pots — fragrant flowers, home-grown fruit.",
+  },
+  {
+    category: "Fruit Plants",
+    name: "Pomegranate (Anar)",
+    price: "₹449",
+    tint: "#B23B4A",
+    blurb: "Ornamental flowers followed by fruit — does well in Lucknow's summer heat.",
+  },
+  {
+    category: "Fruit Plants",
+    name: "Chikoo (Sapodilla)",
+    price: "₹499",
+    tint: "#8A6A45",
+    blurb: "Slow but steady fruiting tree, sweet brown-fleshed fruit once established.",
+  },
+  {
+    category: "Fruit Plants",
+    name: "Papaya & Jackfruit (Kathal)",
+    price: "₹299",
+    tint: "#7EA33E",
+    blurb: "Fast-growing papaya paired with jackfruit sapling for a bigger garden.",
+  },
+  {
+    category: "Fruit Plants",
+    name: "Amla & Ber (Jujube)",
+    price: "₹349",
+    tint: "#6F8F45",
+    blurb: "Two hardy, low-maintenance desi fruit trees suited to local conditions.",
+  },
+
+  /* ---- Cacti, Succulents & Bonsai ---- */
+  {
+    category: "Cacti, Succulents & Bonsai",
+    name: "Succulent Mix (Echeveria, Haworthia, Sedum)",
+    price: "₹149",
+    tint: "#8FBF7A",
+    blurb: "A curated mix of easy-care rosette succulents, perfect for a sunny windowsill.",
+  },
+  {
+    category: "Cacti, Succulents & Bonsai",
+    name: "Mini Desk Cacti (Mammillaria & more)",
+    price: "₹129",
+    tint: "#6B9B5A",
+    blurb: "Tiny desk-friendly cacti that barely need watering — great desk companions.",
+  },
+  {
+    category: "Cacti, Succulents & Bonsai",
+    name: "Ficus Bonsai",
+    price: "₹999",
+    tint: "#4A6B3E",
+    blurb: "Trained ficus bonsai with an established trunk — a striking tabletop piece.",
+  },
+  {
+    category: "Cacti, Succulents & Bonsai",
+    name: "Banyan Bonsai",
+    price: "₹1,299",
+    tint: "#3E5C33",
+    blurb: "Aerial-root banyan trained into bonsai form — a slow, rewarding centrepiece.",
+  },
+  {
+    category: "Cacti, Succulents & Bonsai",
+    name: "Carmona Micro-tree Bonsai",
+    price: "₹899",
+    tint: "#4E7A4E",
+    blurb: "Fine-leafed Carmona (Fukien Tea) trained as a micro bonsai, tiny white flowers.",
+  },
+
+  /* ---- Pots ---- */
   {
     category: "Pots",
     name: "Terracotta Classic",
     price: "₹249",
     tint: "#C4703C",
-    image: "/plants/Terracotta Classic.png"
+    image: "/plants/Terracotta Classic.png",
     blurb: "Breathable clay pot, the reliable everyday choice for most plants.",
   },
   {
@@ -159,7 +486,7 @@ export const PRODUCTS = [
     name: "Matte Ceramic — White",
     price: "₹549",
     tint: "#E8E3D6",
-    image: "/plants/Matte Ceramic_White.jpg"
+    image: "/plants/Matte Ceramic_White.jpg",
     blurb: "Clean, minimal finish that works with any interior style.",
   },
   {
@@ -167,7 +494,7 @@ export const PRODUCTS = [
     name: "Hanging Macrame Planter",
     price: "₹399",
     tint: "#B9A27C",
-    image: "/plants/Hanging Macrame Planter.jpeg"
+    image: "/plants/Hanging Macrame Planter.jpeg",
     blurb: "Handwoven cotton hanger, perfect for trailing plants near a window.",
   },
   {
@@ -175,9 +502,11 @@ export const PRODUCTS = [
     name: "Textured Cement Planter",
     price: "₹449",
     tint: "#9CA39B",
-    image: "/plants/Textured Cement Planter.png"
+    image: "/plants/Textured Cement Planter.png",
     blurb: "Raw, industrial finish — a favourite for balconies and patios.",
   },
+
+  /* ---- Combos ---- */
   {
     category: "Combos",
     name: "Starter Balcony Combo",
