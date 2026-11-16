@@ -181,7 +181,7 @@ const BASE_PRODUCTS = [
   {
     category: "Lucky & Vastu",
     name: "Money Plant",
-    price: "₹199",
+    price: "₹149",
     tint: "#3FAE6B",
     image: "/plants/Money_plnat.jpg",
     blurb: "The classic starter plant — grows in soil or water, forgiving of neglect.",
@@ -218,7 +218,7 @@ const BASE_PRODUCTS = [
   {
     category: "Lucky & Vastu",
     name: "Areca Palm",
-    price: "₹649",
+    price: "₹299",
     tint: "#4CA35A",
     image: "/plants/Areca Palm.png",
     blurb: "Big, breezy fronds that instantly make a corner feel alive.",
@@ -295,7 +295,7 @@ const BASE_PRODUCTS = [
   {
     category: "Indoor & Air-Purifying",
     name: "Spider Plant",
-    price: "₹229",
+    price: "₹189",
     tint: "#4E9B5C",
     blurb: "Fast-growing, sends out baby plantlets — one of the easiest air-purifiers to keep.",
   },
@@ -310,7 +310,7 @@ const BASE_PRODUCTS = [
   {
     category: "Indoor & Air-Purifying",
     name: "Ficus Elastica (Rubber Plant)",
-    price: "₹449",
+    price: "₹199",
     tint: "#2F6B45",
     blurb: "Broad glossy leaves, grows into a striking statement plant over time.",
   },
@@ -463,7 +463,7 @@ const BASE_PRODUCTS = [
   {
     category: "Cacti, Succulents & Bonsai",
     name: "Banyan Bonsai",
-    price: "₹1,299",
+    price: "₹1,999",
     tint: "#3E5C33",
     blurb: "Aerial-root banyan trained into bonsai form — a slow, rewarding centrepiece.",
   },
@@ -528,6 +528,8 @@ const BASE_PRODUCTS = [
 
 /* ---- New: soil, seeds and tools (starter catalog, prices indicative until vendors are locked) ---- */
 const EXTRA_PRODUCTS = [
+  { category: "Indoor & Air-Purifying", name: "Syngonium", price: "₹99", tint: "#6FAE6B", blurb: "Arrow-shaped leaves, easy to grow in water or soil — a budget-friendly starter plant." },
+  { category: "Pots", name: "Basic Plastic Pot (6 inch)", price: "₹79", tint: "#5A5F5A", blurb: "Lightweight, durable everyday nursery pot with drainage holes." },
   { category: "Soil & Fertilizers", name: "Potting Mix (5 kg)", price: "₹199", tint: "#6B4A32", blurb: "Ready-to-use blend of garden soil, cocopeat and compost for pots and planters." },
   { category: "Soil & Fertilizers", name: "Vermicompost (2 kg)", price: "₹149", tint: "#5A3E2B", blurb: "Nutrient-rich organic compost — mix into soil or top-dress every 6–8 weeks." },
   { category: "Soil & Fertilizers", name: "Cocopeat Block (5 kg)", price: "₹179", tint: "#8A6A4A", blurb: "Expands into light, moisture-holding growing medium — ideal for seedlings and succulents." },
@@ -549,7 +551,11 @@ const EXTRA_PRODUCTS = [
 const PRODUCT_META = {
   "Money Plant": { light: "Low to bright indirect", water: "Weekly", petSafe: false, badge: "Bestseller", level: "Beginner" },
   "Snake Plant": { light: "Low to bright", water: "Every 10–14 days", petSafe: false, badge: "Bestseller", level: "Beginner" },
-  "Areca Palm": { light: "Bright indirect", water: "2–3 times a week in summer", petSafe: true, level: "Intermediate" },
+  "Areca Palm": { light: "Bright indirect", water: "2–3 times a week in summer", petSafe: true, level: "Intermediate", size: "2.5–3 ft, 6-inch pot" },
+  "Ficus Elastica (Rubber Plant)": { size: "5-inch pot" },
+  "Ficus Bonsai": { size: "15–20 cm" },
+  "Carmona Micro-tree Bonsai": { size: "15–20 cm" },
+  "Banyan Bonsai": { size: "25–30 cm" },
   "Aloe Vera": { light: "Bright / some direct sun", water: "Every 10–14 days", petSafe: false, badge: "Bestseller", level: "Beginner" },
   "Peace Lily": { light: "Low to medium", water: "Weekly (droops when thirsty)", petSafe: false, level: "Beginner" },
   "ZZ Plant": { light: "Low to medium", water: "Every 2–3 weeks", petSafe: false, level: "Beginner" },
@@ -575,14 +581,14 @@ export const SHOP_TRUST = [
 ];
 
 export const SHOP_INFO = [
-  { title: "Delivery", body: "We currently deliver only within Lucknow. Delivery charge is confirmed on WhatsApp based on your area and order size, and is waived above ₹999." },
+  { title: "Delivery", body: "We currently deliver only within Lucknow. Delivery is ₹75 per order, and free on orders of ₹399 and above. We confirm the exact charge for far-off areas on WhatsApp." },
   { title: "Payment", body: "UPI or cash on delivery. We confirm the final amount (including delivery) on WhatsApp before dispatch." },
   { title: "Replacement & returns", body: "Plants are living things — if one arrives damaged or unhealthy, send a photo within 48 hours and we will replace it. Used pots, tools and soil cannot be returned." },
   { title: "Plant care support", body: "Stuck with a droopy leaf? Message us or use the chat assistant on this site — care help is free for every customer." },
 ];
 
 export const SHOP_FAQ = [
-  { q: "Are the prices final?", a: "Prices shown are the plant or product price. Delivery and any size or variety difference are confirmed on WhatsApp before you pay." },
+  { q: "Are the prices final?", a: "Prices shown are for the product. Delivery is ₹75, free on orders of ₹399 and above. Any size or variety difference is confirmed on WhatsApp before you pay." },
   { q: "What size are the plants?", a: "Most plants come in a 6–8 inch nursery bag or pot unless stated. Trees and bonsai vary — ask us on WhatsApp for a photo of the exact piece." },
   { q: "Do you deliver outside Lucknow?", a: "Not yet. We are launching city-first and will expand to other parts of Uttar Pradesh later." },
   { q: "How long does delivery take?", a: "Usually 1–3 days after confirmation, depending on availability from our local growers." },
@@ -601,21 +607,21 @@ export const PLANT_WALL_PACKAGES = [
   },
   {
     name: "Premium Vertical Wall",
-    price: "From ₹1,800/sq.ft",
-    body: "A full vertical plant wall for a feature spot at home or in an office — priced by area and material tier.",
+    price: "From ₹450/sq.ft",
+    body: "A full vertical plant wall for a feature spot at home or in an office — priced by area and system type (final rate quoted after the site visit).",
     features: ["Custom irrigation-ready frame", "Mixed foliage design", "Weatherproofing for outdoor walls", "Quarterly maintenance plan"],
   },
   {
     name: "Full Custom Landscape",
     price: "Individually quoted",
     body: "End-to-end garden design for larger residential or commercial spaces — from concept sketch to final planting.",
-    features: ["In-depth consultation", "3D layout concept", "Dedicated project lead", "Ongoing maintenance available"],
+    features: ["In-depth consultation", "Concept design ₹25–80/sq.ft", "Dedicated project lead", "Maintenance plans ₹3–10/sq.ft/month"],
   },
 ];
 
 export const PLANT_WALL_PROCESS = [
   { n: "01", title: "Inquiry", body: "Tell us about the space — size, light, indoor or outdoor — over WhatsApp or the contact form." },
-  { n: "02", title: "Site visit", body: "We visit within 48 hours to assess light, wall structure, and water access." },
+  { n: "02", title: "Site visit", body: "We visit within 48 hours to assess light, wall structure, and water access. Site consultation starts at ₹2,000 and is adjusted against the project if you go ahead." },
   { n: "03", title: "Proposal & quote", body: "A clear design concept, material list, and cost breakdown — typically within 3–5 days." },
   { n: "04", title: "Installation", body: "Our team installs the frame, irrigation (if needed), and plants — usually in a single visit for balcony-scale walls." },
   { n: "05", title: "Handover & care", body: "A walkthrough of how to maintain it, plus an optional recurring maintenance plan." },

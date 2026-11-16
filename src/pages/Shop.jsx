@@ -6,7 +6,8 @@ import SEO, { SITE_URL } from "../components/SEO.jsx";
 
 const priceNum = (p) => Number((p || "").replace(/[^\d]/g, "")) || 0;
 const inr = (n) => "₹" + n.toLocaleString("en-IN");
-const FREE_DELIVERY_ABOVE = 999;
+const FREE_DELIVERY_ABOVE = 399;
+const DELIVERY_FEE = 75;
 const CART_KEY = "vasukii-cart-v1";
 
 const SHOP_JSON_LD = {
@@ -134,12 +135,14 @@ function Basket({ items, onClose, onQty, onRemove, onClear }) {
   const [note, setNote] = useState("");
 
   const subtotal = items.reduce((t, i) => t + priceNum(i.price) * i.qty, 0);
-  const delivery = subtotal >= FREE_DELIVERY_ABOVE || subtotal === 0 ? "Free" : "Confirmed on WhatsApp";
+  const deliveryFee = subtotal >= FREE_DELIVERY_ABOVE || subtotal === 0 ? 0 : DELIVERY_FEE;
+  const delivery = deliveryFee === 0 ? "Free" : inr(deliveryFee);
+  const total = subtotal + deliveryFee;
 
   const orderText = encodeURIComponent(
     `Hi Vasukii! I'd like to place an order:\n\n` +
       items.map((i) => `• ${i.name} × ${i.qty} — ${inr(priceNum(i.price) * i.qty)}`).join("\n") +
-      `\n\nSubtotal: ${inr(subtotal)}\nDelivery: ${delivery}` +
+      `\n\nSubtotal: ${inr(subtotal)}\nDelivery: ${delivery}\nTotal: ${inr(total)}` +
       `\n\nName: ${name || "—"}\nDelivery area (Lucknow): ${area || "—"}` +
       (note ? `\nNote: ${note}` : "")
   );
@@ -192,8 +195,9 @@ function Basket({ items, onClose, onQty, onRemove, onClear }) {
             <div className="mt-4 space-y-1 text-sm">
               <div className="flex justify-between text-stone-300"><span>Subtotal</span><span>{inr(subtotal)}</span></div>
               <div className="flex justify-between text-stone-300"><span>Delivery (Lucknow)</span><span>{delivery}</span></div>
+              <div className="flex justify-between font-semibold text-stone-50"><span>Total</span><span>{inr(total)}</span></div>
               <p className="pt-1 text-xs text-stone-400">
-                Free delivery above {inr(FREE_DELIVERY_ABOVE)}. No payment now — we confirm the total and availability on WhatsApp first.
+                Delivery {inr(DELIVERY_FEE)}, free on orders of {inr(FREE_DELIVERY_ABOVE)}+. No payment now — we confirm availability and the final amount on WhatsApp first.
               </p>
             </div>
 
