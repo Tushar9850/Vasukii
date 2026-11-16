@@ -105,10 +105,13 @@ export const SHOP_CATEGORIES = [
   "Fruit Plants",
   "Cacti, Succulents & Bonsai",
   "Pots",
+  "Soil & Fertilizers",
+  "Seeds & Bulbs",
+  "Garden Tools",
   "Combos",
 ];
 
-export const PRODUCTS = [
+const BASE_PRODUCTS = [
   /* ---- Fragrance & Aromatic Plants (सुगंधित पौधे) ---- */
   {
     category: "Fragrance & Aromatic",
@@ -521,6 +524,70 @@ export const PRODUCTS = [
     tint: "#4CA35A",
     blurb: "One low-light desk plant + a compact ceramic pot, no maintenance stress.",
   },
+];
+
+/* ---- New: soil, seeds and tools (starter catalog, prices indicative until vendors are locked) ---- */
+const EXTRA_PRODUCTS = [
+  { category: "Soil & Fertilizers", name: "Potting Mix (5 kg)", price: "₹199", tint: "#6B4A32", blurb: "Ready-to-use blend of garden soil, cocopeat and compost for pots and planters." },
+  { category: "Soil & Fertilizers", name: "Vermicompost (2 kg)", price: "₹149", tint: "#5A3E2B", blurb: "Nutrient-rich organic compost — mix into soil or top-dress every 6–8 weeks." },
+  { category: "Soil & Fertilizers", name: "Cocopeat Block (5 kg)", price: "₹179", tint: "#8A6A4A", blurb: "Expands into light, moisture-holding growing medium — ideal for seedlings and succulents." },
+  { category: "Soil & Fertilizers", name: "Neem Cake Fertilizer (1 kg)", price: "₹129", tint: "#7A6A3E", blurb: "Organic slow-release feed that also helps keep soil pests in check." },
+  { category: "Soil & Fertilizers", name: "Organic Pest Spray (500 ml)", price: "₹249", tint: "#6F8F45", blurb: "Neem-based ready-to-use spray for mealybugs, aphids and whiteflies." },
+  { category: "Seeds & Bulbs", name: "Kitchen Herb Seed Kit", price: "₹199", tint: "#5FA35F", blurb: "Tulsi, coriander, mint and basil seeds with sowing guide." },
+  { category: "Seeds & Bulbs", name: "Seasonal Flower Seeds (Pack of 5)", price: "₹149", tint: "#E8A93C", blurb: "Marigold, zinnia, cosmos, sunflower and petunia seeds for the season." },
+  { category: "Seeds & Bulbs", name: "Winter Vegetable Seed Pack", price: "₹179", tint: "#7BA75E", blurb: "Spinach, methi, tomato, radish and carrot seeds sized for pots and grow bags." },
+  { category: "Garden Tools", name: "Hand Tool Set (3-piece)", price: "₹349", tint: "#8A8F8A", blurb: "Trowel, hand fork and cultivator for repotting and weeding." },
+  { category: "Garden Tools", name: "Pruning Secateurs", price: "₹299", tint: "#7A8A7E", blurb: "Sharp, rust-resistant secateurs for clean cuts on stems and small branches." },
+  { category: "Garden Tools", name: "Watering Can (2 L)", price: "₹249", tint: "#6F9A8A", blurb: "Long-spout watering can for precise, gentle watering of indoor plants." },
+  { category: "Garden Tools", name: "Hand Sprayer / Mister (1 L)", price: "₹199", tint: "#7AA8A0", blurb: "Fine-mist sprayer for foliage, seedlings and applying pest sprays." },
+  { category: "Garden Tools", name: "Grow Bags (Set of 5, 12 inch)", price: "₹299", tint: "#4A4F4A", blurb: "Breathable fabric grow bags for vegetables, herbs and flowering plants." },
+  { category: "Combos", name: "Plant Care Starter Kit", price: "₹699", tint: "#4CA35A", blurb: "Potting mix, vermicompost, hand tool set and watering can — everything for first-time plant parents." },
+  { category: "Combos", name: "Gifting Combo (Plant + Ceramic Pot)", price: "₹799", tint: "#B9A27C", blurb: "Lucky plant in a matte ceramic pot with a handwritten card — ready to gift." },
+];
+
+/* ---- Care info / badges merged onto products by name (light, water, pet safety, bestseller etc.) ---- */
+const PRODUCT_META = {
+  "Money Plant": { light: "Low to bright indirect", water: "Weekly", petSafe: false, badge: "Bestseller", level: "Beginner" },
+  "Snake Plant": { light: "Low to bright", water: "Every 10–14 days", petSafe: false, badge: "Bestseller", level: "Beginner" },
+  "Areca Palm": { light: "Bright indirect", water: "2–3 times a week in summer", petSafe: true, level: "Intermediate" },
+  "Aloe Vera": { light: "Bright / some direct sun", water: "Every 10–14 days", petSafe: false, badge: "Bestseller", level: "Beginner" },
+  "Peace Lily": { light: "Low to medium", water: "Weekly (droops when thirsty)", petSafe: false, level: "Beginner" },
+  "ZZ Plant": { light: "Low to medium", water: "Every 2–3 weeks", petSafe: false, level: "Beginner" },
+  "Spider Plant": { light: "Medium indirect", water: "Weekly", petSafe: true, level: "Beginner" },
+  "Lucky Bamboo": { light: "Low to medium", water: "Change water weekly", petSafe: false, level: "Beginner" },
+  "Tulsi (Holy Basil)": { light: "Full sun", water: "Daily in summer", petSafe: true, level: "Beginner" },
+  "Mogra (Arabian Jasmine)": { light: "Full sun", water: "Regular, avoid waterlogging", petSafe: true, level: "Intermediate" },
+  "Hibiscus (Gudhal — Local & Hybrid)": { light: "Full sun", water: "Regular", petSafe: true, level: "Beginner" },
+  "Adenium (Desert Rose)": { light: "Full sun", water: "Sparingly", petSafe: false, level: "Intermediate" },
+  "Terracotta Classic": { size: "8 inch", drainage: "Drainage hole" },
+  "Matte Ceramic — White": { size: "6 inch", drainage: "Drainage hole + tray" },
+  "Hanging Macrame Planter": { size: "Fits 6 inch pot", drainage: "Hanger only (pot sold separately)" },
+  "Textured Cement Planter": { size: "8 inch", drainage: "Drainage hole" },
+};
+
+export const PRODUCTS = [...BASE_PRODUCTS, ...EXTRA_PRODUCTS].map((p) => ({ ...p, ...(PRODUCT_META[p.name] || {}) }));
+
+export const SHOP_TRUST = [
+  { title: "Hyperlocal delivery", body: "Delivered within Lucknow city limits, usually in 1–3 days." },
+  { title: "Personally confirmed", body: "Every order is confirmed on WhatsApp before it is sourced." },
+  { title: "Healthy-plant promise", body: "Damaged or unhealthy on arrival? Tell us within 48 hours." },
+  { title: "Pay on delivery or UPI", body: "Cash on delivery or UPI — no card details needed." },
+];
+
+export const SHOP_INFO = [
+  { title: "Delivery", body: "We currently deliver only within Lucknow. Delivery charge is confirmed on WhatsApp based on your area and order size, and is waived above ₹999." },
+  { title: "Payment", body: "UPI or cash on delivery. We confirm the final amount (including delivery) on WhatsApp before dispatch." },
+  { title: "Replacement & returns", body: "Plants are living things — if one arrives damaged or unhealthy, send a photo within 48 hours and we will replace it. Used pots, tools and soil cannot be returned." },
+  { title: "Plant care support", body: "Stuck with a droopy leaf? Message us or use the chat assistant on this site — care help is free for every customer." },
+];
+
+export const SHOP_FAQ = [
+  { q: "Are the prices final?", a: "Prices shown are the plant or product price. Delivery and any size or variety difference are confirmed on WhatsApp before you pay." },
+  { q: "What size are the plants?", a: "Most plants come in a 6–8 inch nursery bag or pot unless stated. Trees and bonsai vary — ask us on WhatsApp for a photo of the exact piece." },
+  { q: "Do you deliver outside Lucknow?", a: "Not yet. We are launching city-first and will expand to other parts of Uttar Pradesh later." },
+  { q: "How long does delivery take?", a: "Usually 1–3 days after confirmation, depending on availability from our local growers." },
+  { q: "Can I order a custom combo or bulk order?", a: "Yes — for gifting, offices and events send us your budget and we will put a combo together." },
+  { q: "Are the plants pet-safe?", a: "Where we know it, a Pet-safe or Toxic to pets tag is shown on the card. If unsure, ask before ordering." },
 ];
 
 /* ---------------- plant walls & design ---------------- */
