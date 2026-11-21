@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Reveal } from "../components/UI.jsx";
+import { Eyebrow, Reveal } from "../components/UI.jsx";
 import { BLOG_CATEGORIES, BLOG_POSTS } from "../data.js";
 import { WHATSAPP, INSTAGRAM } from "../components/Nav.jsx";
 import SEO from "../components/SEO.jsx";
@@ -17,7 +17,8 @@ export default function Blog() {
       />
       <header className="relative overflow-hidden px-6 pb-14 pt-20 sm:pt-24">
         <div className="relative mx-auto max-w-3xl text-center">
-          <h1 className="mx-auto max-w-2xl font-serif text-4xl font-semibold leading-tight text-stone-50 sm:text-5xl">
+          <Eyebrow>From the Vasukii journal</Eyebrow>
+          <h1 className="mx-auto mt-6 max-w-2xl font-serif text-4xl font-semibold leading-tight text-stone-50 sm:text-5xl">
             Plants, people, and the city we're growing in.
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-stone-300">

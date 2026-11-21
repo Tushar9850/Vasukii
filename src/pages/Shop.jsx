@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Reveal } from "../components/UI.jsx";
+import { Eyebrow, Reveal } from "../components/UI.jsx";
 import { PRODUCTS, SHOP_CATEGORIES, SHOP_TRUST, SHOP_INFO, SHOP_FAQ } from "../data.js";
 import { WHATSAPP } from "../components/Nav.jsx";
 import SEO, { SITE_URL } from "../components/SEO.jsx";
@@ -285,7 +285,8 @@ export default function Shop() {
 
       <header className="relative overflow-hidden px-6 pb-10 pt-20 sm:pt-24">
         <div className="relative mx-auto max-w-3xl text-center">
-          <h1 className="mx-auto max-w-2xl font-serif text-4xl font-semibold leading-tight text-stone-50 sm:text-5xl">
+          <Eyebrow>Plants &amp; pots</Eyebrow>
+          <h1 className="mx-auto mt-6 max-w-2xl font-serif text-4xl font-semibold leading-tight text-stone-50 sm:text-5xl">
             A small, honest catalog — growing as demand proves itself.
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-stone-300">

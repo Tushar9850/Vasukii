@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Reveal, VineDivider, AnimatedPlant } from "../components/UI.jsx";
+import { Eyebrow, Reveal, VineDivider, AnimatedPlant } from "../components/UI.jsx";
 import { PILLARS } from "../data.js";
 import { WHATSAPP, INSTAGRAM } from "../components/Nav.jsx";
 import SEO, { SITE_URL } from "../components/SEO.jsx";
@@ -39,7 +39,8 @@ export default function Home() {
         ></div>
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 sm:grid-cols-[1.15fr_0.85fr]">
           <div className="relative">
-            <h1 className="font-serif text-5xl font-semibold leading-[1.05] tracking-tight text-stone-50 sm:text-6xl lg:text-7xl">
+            <Eyebrow>Now validating in Lucknow</Eyebrow>
+            <h1 className="mt-6 font-serif text-5xl font-semibold leading-[1.05] tracking-tight text-stone-50 sm:text-6xl lg:text-7xl">
               Plants, pots &amp;
               <br />
               garden care —
@@ -81,7 +82,8 @@ export default function Home() {
       <section className="px-6 py-6">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 sm:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
-            <h2 className="max-w-md font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
+            <Eyebrow>Where the name comes from</Eyebrow>
+            <h2 className="mt-5 max-w-md font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
               Named after the serpent who held up the earth.
             </h2>
           </Reveal>
@@ -107,7 +109,8 @@ export default function Home() {
       <section className="border-y border-stone-900/10 bg-emerald-950/60 px-6 py-24">
         <div className="mx-auto max-w-6xl">
           <Reveal className="mb-14 max-w-xl">
-            <h2 className="font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
+            <Eyebrow>What lives under one roof</Eyebrow>
+            <h2 className="mt-4 font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
               Three ways Vasukii shows up in your space.
             </h2>
             <p className="mt-3.5 text-base leading-relaxed text-stone-300">
@@ -133,8 +136,9 @@ export default function Home() {
 
       <section className="px-6 py-24 text-center">
         <div className="mx-auto max-w-xl">
+          <Eyebrow>City-first, by design</Eyebrow>
           <Reveal>
-            <h2 className="mx-auto max-w-lg font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
+            <h2 className="mx-auto mt-5 max-w-lg font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
               We're proving this in Lucknow before anywhere else.
             </h2>
           </Reveal>
