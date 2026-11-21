@@ -51,7 +51,7 @@ function Chip({ children, tone = "default" }) {
     warn: "bg-amber-500/15 text-amber-300",
   };
   return (
-    <span className={`inline-block rounded-full px-2.5 py-1 text-[11px] font-medium ${tones[tone]}`}>
+    <span className={`inline-block rounded-md px-2.5 py-1 text-[11px] font-medium ${tones[tone]}`}>
       {children}
     </span>
   );
@@ -76,14 +76,14 @@ function ProductCard({ product, onAdd, qty }) {
             </div>
           )}
           {product.badge && (
-            <span className="absolute left-3 top-3 rounded-full bg-amber-500 px-3 py-1 text-[11px] font-semibold text-emerald-950">
+            <span className="absolute left-3 top-3 rounded-md bg-amber-500 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-950">
               {product.badge}
             </span>
           )}
         </div>
 
         <div className="flex flex-1 flex-col p-6">
-          <span className="mb-2 inline-block w-fit rounded-full bg-stone-900/5 px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-stone-300">
+          <span className="mb-2 inline-block w-fit rounded-md border border-stone-900/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-stone-300">
             {product.category}
           </span>
           <h3 className="mb-1.5 text-lg font-semibold text-stone-50">{product.name}</h3>

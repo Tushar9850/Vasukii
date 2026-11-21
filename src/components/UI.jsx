@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 export function Eyebrow({ children }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3.5 py-1.5 text-xs font-medium uppercase tracking-widest text-emerald-800">
-      <span className="h-1.5 w-1.5 rounded-full bg-amber-500 ring-4 ring-amber-500/25"></span>
+    <span className="inline-flex items-center rounded-md border border-stone-900/15 bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-emerald-700">
       {children}
     </span>
   );

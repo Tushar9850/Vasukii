@@ -52,7 +52,7 @@ export default function Blog() {
           {visible.map((post) => (
             <Reveal key={post.title}>
               <article className="flex h-full flex-col rounded-2xl border border-stone-900/10 bg-emerald-900/40 p-7 transition-all hover:-translate-y-1 hover:border-emerald-400/50">
-                <span className="mb-4 inline-block w-fit rounded-full bg-amber-500/15 px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-amber-400">
+                <span className="mb-4 inline-block w-fit rounded-md border border-stone-900/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-emerald-700">
                   {post.category}
                 </span>
                 <h3 className="mb-2.5 text-lg font-semibold leading-snug text-stone-50">{post.title}</h3>
