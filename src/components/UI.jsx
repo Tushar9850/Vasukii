@@ -1,13 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 
-export function Eyebrow({ children }) {
-  return (
-    <span className="inline-flex items-center rounded-md border border-stone-900/15 bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-emerald-700">
-      {children}
-    </span>
-  );
-}
-
 export function Reveal({ children, className = "" }) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);

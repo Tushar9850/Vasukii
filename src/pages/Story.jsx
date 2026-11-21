@@ -1,5 +1,5 @@
 import React from "react";
-import { Eyebrow, Reveal, VineDivider } from "../components/UI.jsx";
+import { Reveal, VineDivider } from "../components/UI.jsx";
 import { WHATSAPP } from "../components/Nav.jsx";
 import SEO from "../components/SEO.jsx";
 
@@ -40,8 +40,7 @@ export default function Story() {
           style={{ background: "radial-gradient(circle, rgba(148,99,64,0.12) 0%, rgba(148,99,64,0) 70%)" }}
         ></div>
         <div className="relative mx-auto max-w-3xl text-center">
-          <Eyebrow>Our story</Eyebrow>
-          <h1 className="mx-auto mt-6 max-w-2xl font-serif text-4xl font-semibold leading-tight text-stone-50 sm:text-5xl">
+          <h1 className="mx-auto max-w-2xl font-serif text-4xl font-semibold leading-tight text-stone-50 sm:text-5xl">
             The serpent that churned the ocean — and what we're churning next.
           </h1>
         </div>
@@ -84,8 +83,7 @@ export default function Story() {
       <section className="border-y border-stone-900/10 bg-emerald-950/60 px-6 py-20">
         <div className="mx-auto max-w-3xl">
           <Reveal className="mb-10 text-center">
-            <Eyebrow>What we're going to do</Eyebrow>
-            <h2 className="mx-auto mt-4 max-w-lg font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
+            <h2 className="mx-auto max-w-lg font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
               Right now, we're proving it — one city, one order at a time.
             </h2>
           </Reveal>

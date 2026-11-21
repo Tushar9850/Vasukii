@@ -1,5 +1,5 @@
 import React from "react";
-import { Eyebrow, Reveal, VineDivider } from "../components/UI.jsx";
+import { Reveal, VineDivider } from "../components/UI.jsx";
 import { PLANT_WALL_PACKAGES, PLANT_WALL_PROCESS } from "../data.js";
 import { WHATSAPP } from "../components/Nav.jsx";
 import SEO from "../components/SEO.jsx";
@@ -20,8 +20,7 @@ export default function PlantWalls() {
           style={{ background: "radial-gradient(circle, rgba(110,139,106,0.16) 0%, rgba(110,139,106,0) 70%)" }}
         ></div>
         <div className="relative mx-auto max-w-3xl text-center">
-          <Eyebrow>Design &amp; installation</Eyebrow>
-          <h1 className="mx-auto mt-6 max-w-2xl font-serif text-4xl font-semibold leading-tight text-stone-50 sm:text-5xl">
+          <h1 className="mx-auto max-w-2xl font-serif text-4xl font-semibold leading-tight text-stone-50 sm:text-5xl">
             Custom gardens &amp; vertical plant walls, done properly.
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-stone-300">
@@ -64,8 +63,7 @@ export default function PlantWalls() {
       <section className="px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <Reveal className="mb-14 max-w-xl">
-            <Eyebrow>Packages</Eyebrow>
-            <h2 className="mt-4 font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
+            <h2 className="font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
               Three ways to start, priced honestly.
             </h2>
           </Reveal>
@@ -96,8 +94,7 @@ export default function PlantWalls() {
       <section className="border-y border-stone-900/10 bg-emerald-950/60 px-6 py-20">
         <div className="mx-auto max-w-4xl">
           <Reveal className="mb-12 text-center">
-            <Eyebrow>How a project runs</Eyebrow>
-            <h2 className="mx-auto mt-4 max-w-md font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
+            <h2 className="mx-auto max-w-md font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
               Inquiry to handover, five steps.
             </h2>
           </Reveal>

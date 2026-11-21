@@ -1,5 +1,5 @@
 import React from "react";
-import { Eyebrow, Reveal, VineDivider } from "../components/UI.jsx";
+import { Reveal, VineDivider } from "../components/UI.jsx";
 import { PILLARS, STEPS } from "../data.js";
 import { WHATSAPP } from "../components/Nav.jsx";
 import SEO from "../components/SEO.jsx";
@@ -14,8 +14,7 @@ export default function WhatWeDo() {
       />
       <header className="relative overflow-hidden px-6 pb-16 pt-20 sm:pt-24">
         <div className="relative mx-auto max-w-3xl text-center">
-          <Eyebrow>What we do</Eyebrow>
-          <h1 className="mx-auto mt-6 max-w-2xl font-serif text-4xl font-semibold leading-tight text-stone-50 sm:text-5xl">
+          <h1 className="mx-auto max-w-2xl font-serif text-4xl font-semibold leading-tight text-stone-50 sm:text-5xl">
             One platform, three ways it shows up for you.
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-stone-300">
@@ -52,8 +51,7 @@ export default function WhatWeDo() {
       <section className="border-y border-stone-900/10 bg-emerald-950/60 px-6 py-20">
         <div className="mx-auto max-w-4xl">
           <Reveal className="mb-12 text-center">
-            <Eyebrow>How it works</Eyebrow>
-            <h2 className="mx-auto mt-4 max-w-md font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
+            <h2 className="mx-auto max-w-md font-serif text-3xl font-semibold text-stone-50 sm:text-4xl">
               Three steps, start to finish.
             </h2>
           </Reveal>
