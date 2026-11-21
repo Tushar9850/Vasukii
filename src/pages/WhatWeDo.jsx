@@ -31,13 +31,13 @@ export default function WhatWeDo() {
         <div className="mx-auto max-w-5xl space-y-6">
           {PILLARS.map((p, i) => (
             <Reveal key={p.title}>
-              <div className="grid grid-cols-1 gap-6 rounded-2xl border border-white/10 bg-emerald-900/40 p-8 sm:grid-cols-[auto_1fr] sm:items-start sm:p-10">
+              <div className="grid grid-cols-1 gap-6 rounded-2xl border border-stone-900/10 bg-emerald-900/40 p-8 sm:grid-cols-[auto_1fr] sm:items-start sm:p-10">
                 <span className="font-serif text-4xl italic text-amber-400/80">{String(i + 1).padStart(2, "0")}</span>
                 <div>
-                  <span className="mb-2 block font-serif text-sm italic text-emerald-300">{p.tag}</span>
+                  <span className="mb-2 block font-serif text-sm italic text-emerald-700">{p.tag}</span>
                   <h3 className="mb-3 text-2xl font-semibold text-stone-50">{p.title}</h3>
                   <p className="mb-4 max-w-2xl text-[15.5px] leading-relaxed text-stone-300">{p.detail}</p>
-                  <a href={p.link} className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-300 hover:text-emerald-200">
+                  <a href={p.link} className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700 hover:text-emerald-800">
                     {p.linkLabel} →
                   </a>
                 </div>
@@ -49,7 +49,7 @@ export default function WhatWeDo() {
 
       <VineDivider flip />
 
-      <section className="border-y border-white/10 bg-emerald-950/60 px-6 py-20">
+      <section className="border-y border-stone-900/10 bg-emerald-950/60 px-6 py-20">
         <div className="mx-auto max-w-4xl">
           <Reveal className="mb-12 text-center">
             <Eyebrow>How it works</Eyebrow>
@@ -60,7 +60,7 @@ export default function WhatWeDo() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {STEPS.map((s) => (
               <Reveal key={s.n}>
-                <div className="h-full rounded-2xl border border-white/10 bg-emerald-900/30 p-7">
+                <div className="h-full rounded-2xl border border-stone-900/10 bg-emerald-900/30 p-7">
                   <span className="mb-4 block font-serif text-2xl italic text-amber-400">{s.n}</span>
                   <h3 className="mb-2 text-lg font-semibold text-stone-50">{s.title}</h3>
                   <p className="text-sm leading-relaxed text-stone-300">{s.body}</p>

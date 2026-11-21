@@ -35,7 +35,7 @@ export default function Home() {
       <header className="relative overflow-hidden px-6 pb-28 pt-20 sm:pt-24">
         <div
           className="pointer-events-none absolute -right-40 -top-52 h-[640px] w-[640px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(63,174,107,0.28) 0%, rgba(63,174,107,0) 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(110,139,106,0.16) 0%, rgba(110,139,106,0) 70%)" }}
         ></div>
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 sm:grid-cols-[1.15fr_0.85fr]">
           <div className="relative">
@@ -45,7 +45,7 @@ export default function Home() {
               <br />
               garden care —
               <br />
-              <em className="not-italic italic font-medium text-emerald-300">one green address.</em>
+              <em className="not-italic italic font-medium text-emerald-700">one green address.</em>
             </h1>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-stone-300">
               Vasukii brings local growers, gardeners and designers onto one platform, so your
@@ -62,7 +62,7 @@ export default function Home() {
               </a>
               <Link
                 to="/shop"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-sm font-semibold text-stone-50 transition hover:bg-white/5"
+                className="inline-flex items-center gap-2 rounded-full border border-stone-900/25 px-6 py-3.5 text-sm font-semibold text-stone-50 transition hover:bg-stone-900/5"
               >
                 Browse the shop
               </Link>
@@ -97,7 +97,7 @@ export default function Home() {
               We borrowed the name because it's the same idea, at a smaller scale — a bare balcony
               turned green again.
             </p>
-            <Link to="/story" className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-300 hover:text-emerald-200">
+            <Link to="/story" className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700 hover:text-emerald-800">
               Read our full story →
             </Link>
           </Reveal>
@@ -106,7 +106,7 @@ export default function Home() {
 
       <VineDivider flip />
 
-      <section className="border-y border-white/10 bg-emerald-950/60 px-6 py-24">
+      <section className="border-y border-stone-900/10 bg-emerald-950/60 px-6 py-24">
         <div className="mx-auto max-w-6xl">
           <Reveal className="mb-14 max-w-xl">
             <Eyebrow>What lives under one roof</Eyebrow>
@@ -120,11 +120,11 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {PILLARS.map((p) => (
               <Reveal key={p.title}>
-                <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-emerald-900/40 p-8 transition-all hover:-translate-y-1 hover:border-emerald-400/50">
-                  <span className="mb-5 block font-serif text-sm italic text-emerald-300">{p.tag}</span>
+                <div className="flex h-full flex-col rounded-2xl border border-stone-900/10 bg-emerald-900/40 p-8 transition-all hover:-translate-y-1 hover:border-emerald-400/50">
+                  <span className="mb-5 block font-serif text-sm italic text-emerald-700">{p.tag}</span>
                   <h3 className="mb-3 text-xl font-semibold text-stone-50">{p.title}</h3>
                   <p className="mb-6 flex-1 text-[15px] leading-relaxed text-stone-300">{p.body}</p>
-                  <Link to={p.link} className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-300 hover:text-emerald-200">
+                  <Link to={p.link} className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700 hover:text-emerald-800">
                     {p.linkLabel} →
                   </Link>
                 </div>

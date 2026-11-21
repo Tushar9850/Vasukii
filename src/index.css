@@ -11,8 +11,8 @@ body {
 }
 
 ::selection {
-  background: #e8891f;
-  color: #0a1c13;
+  background: #5a7957;
+  color: #faf9f6;
 }
 
 /* ---------- animated potted plant (hero) ---------- */
@@ -139,7 +139,7 @@ body {
 
 .vine-path {
   fill: none;
-  stroke: #3fae6b;
+  stroke: #6e8b6a;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-dasharray: 1400;

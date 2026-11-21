@@ -37,7 +37,7 @@ export default function Story() {
       <header className="relative overflow-hidden px-6 pb-20 pt-20 sm:pt-24">
         <div
           className="pointer-events-none absolute -left-40 -top-40 h-[520px] w-[520px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(232,137,31,0.16) 0%, rgba(232,137,31,0) 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(148,99,64,0.12) 0%, rgba(148,99,64,0) 70%)" }}
         ></div>
         <div className="relative mx-auto max-w-3xl text-center">
           <Eyebrow>Our story</Eyebrow>
@@ -81,7 +81,7 @@ export default function Story() {
 
       <VineDivider flip />
 
-      <section className="border-y border-white/10 bg-emerald-950/60 px-6 py-20">
+      <section className="border-y border-stone-900/10 bg-emerald-950/60 px-6 py-20">
         <div className="mx-auto max-w-3xl">
           <Reveal className="mb-10 text-center">
             <Eyebrow>What we're going to do</Eyebrow>
@@ -93,7 +93,7 @@ export default function Story() {
           <div className="space-y-5">
             {ROADMAP.map((item, i) => (
               <Reveal key={item.t}>
-                <div className="flex gap-5 rounded-xl border border-white/10 bg-emerald-900/30 p-6">
+                <div className="flex gap-5 rounded-xl border border-stone-900/10 bg-emerald-900/30 p-6">
                   <span className="font-serif text-lg italic text-amber-400">{String(i + 1).padStart(2, "0")}</span>
                   <div>
                     <h3 className="mb-1.5 text-base font-semibold text-stone-50">{item.t}</h3>

@@ -17,7 +17,7 @@ export default function PlantWalls() {
       <header className="relative overflow-hidden px-6 pb-16 pt-20 sm:pt-24">
         <div
           className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(63,174,107,0.24) 0%, rgba(63,174,107,0) 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(110,139,106,0.16) 0%, rgba(110,139,106,0) 70%)" }}
         ></div>
         <div className="relative mx-auto max-w-3xl text-center">
           <Eyebrow>Design &amp; installation</Eyebrow>
@@ -46,7 +46,7 @@ export default function PlantWalls() {
           {GALLERY_TINTS.map((tint, i) => (
             <Reveal key={i}>
               <div
-                className="flex aspect-[4/3] items-center justify-center rounded-xl border border-white/10"
+                className="flex aspect-[4/3] items-center justify-center rounded-xl border border-stone-900/10"
                 style={{ backgroundColor: tint + "26" }}
               >
                 <span className="text-xs font-medium uppercase tracking-widest text-stone-400">Project preview</span>
@@ -72,7 +72,7 @@ export default function PlantWalls() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {PLANT_WALL_PACKAGES.map((pkg) => (
               <Reveal key={pkg.name}>
-                <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-emerald-900/40 p-8">
+                <div className="flex h-full flex-col rounded-2xl border border-stone-900/10 bg-emerald-900/40 p-8">
                   <h3 className="mb-1.5 text-xl font-semibold text-stone-50">{pkg.name}</h3>
                   <span className="mb-4 font-serif text-lg italic text-amber-400">{pkg.price}</span>
                   <p className="mb-5 text-sm leading-relaxed text-stone-300">{pkg.body}</p>
@@ -93,7 +93,7 @@ export default function PlantWalls() {
 
       <VineDivider flip />
 
-      <section className="border-y border-white/10 bg-emerald-950/60 px-6 py-20">
+      <section className="border-y border-stone-900/10 bg-emerald-950/60 px-6 py-20">
         <div className="mx-auto max-w-4xl">
           <Reveal className="mb-12 text-center">
             <Eyebrow>How a project runs</Eyebrow>
@@ -104,7 +104,7 @@ export default function PlantWalls() {
           <div className="space-y-4">
             {PLANT_WALL_PROCESS.map((s) => (
               <Reveal key={s.n}>
-                <div className="flex gap-5 rounded-xl border border-white/10 bg-emerald-900/30 p-6">
+                <div className="flex gap-5 rounded-xl border border-stone-900/10 bg-emerald-900/30 p-6">
                   <span className="font-serif text-lg italic text-amber-400">{s.n}</span>
                   <div>
                     <h3 className="mb-1.5 text-base font-semibold text-stone-50">{s.title}</h3>

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 export function Eyebrow({ children }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3.5 py-1.5 text-xs font-medium uppercase tracking-widest text-emerald-200">
+    <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3.5 py-1.5 text-xs font-medium uppercase tracking-widest text-emerald-800">
       <span className="h-1.5 w-1.5 rounded-full bg-amber-500 ring-4 ring-amber-500/25"></span>
       {children}
     </span>
@@ -108,7 +108,7 @@ export function AnimatedPlant() {
       ></div>
 
       <svg viewBox="0 0 300 320" className="relative z-10 h-full w-full max-w-[300px]">
-        <ellipse cx="150" cy="284" rx="66" ry="10" fill="#0A1C13" opacity="0.5" />
+        <ellipse cx="150" cy="284" rx="66" ry="10" fill="#2E2E2C" opacity="0.12" />
 
         <path d="M96,208 L204,208 L190,282 C190,288 180,292 150,292 C120,292 110,288 110,282 Z" fill="#C4703C" />
         <path d="M96,208 L204,208 L198,224 L102,224 Z" fill="#DE9760" />
@@ -120,40 +120,40 @@ export function AnimatedPlant() {
             className="vas-stem"
             d="M150,206 C 146,170 158,148 148,116 C 140,90 156,72 150,42"
             fill="none"
-            stroke="#3FAE6B"
+            stroke="#5E8F63"
             strokeWidth="5"
             strokeLinecap="round"
           />
 
           <g transform="translate(147,168) rotate(-24)">
             <g className="vas-leaf-p" style={{ transformOrigin: "0px 0px", animationDelay: "0.9s, 1.7s" }}>
-              <path d="M0,0 C16,-13 36,-9 40,6 C24,15 6,11 0,0 Z" fill="#8FD4A8" />
+              <path d="M0,0 C16,-13 36,-9 40,6 C24,15 6,11 0,0 Z" fill="#8DB591" />
             </g>
           </g>
           <g transform="translate(150,132) rotate(20) scale(-1,1)">
             <g className="vas-leaf-p" style={{ transformOrigin: "0px 0px", animationDelay: "1.3s, 2.1s" }}>
-              <path d="M0,0 C15,-12 34,-8 38,5 C23,14 6,10 0,0 Z" fill="#3FAE6B" />
+              <path d="M0,0 C15,-12 34,-8 38,5 C23,14 6,10 0,0 Z" fill="#5E8F63" />
             </g>
           </g>
           <g transform="translate(144,96) rotate(-26)">
             <g className="vas-leaf-p" style={{ transformOrigin: "0px 0px", animationDelay: "1.7s, 2.5s" }}>
-              <path d="M0,0 C13,-11 29,-7 32,5 C20,13 5,9 0,0 Z" fill="#8FD4A8" />
+              <path d="M0,0 C13,-11 29,-7 32,5 C20,13 5,9 0,0 Z" fill="#8DB591" />
             </g>
           </g>
           <g transform="translate(153,64) rotate(22) scale(-1,1)">
             <g className="vas-leaf-p" style={{ transformOrigin: "0px 0px", animationDelay: "2.1s, 2.9s" }}>
-              <path d="M0,0 C12,-10 26,-6 29,5 C18,12 5,8 0,0 Z" fill="#3FAE6B" />
+              <path d="M0,0 C12,-10 26,-6 29,5 C18,12 5,8 0,0 Z" fill="#5E8F63" />
             </g>
           </g>
 
           <g transform="translate(150,40)">
             <g className="vas-flower" style={{ transformOrigin: "0px 0px" }}>
-              <g transform="rotate(0)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#F3EEE0" /></g>
-              <g transform="rotate(72)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#F3EEE0" /></g>
-              <g transform="rotate(144)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#F3EEE0" /></g>
-              <g transform="rotate(216)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#F3EEE0" /></g>
-              <g transform="rotate(288)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#F3EEE0" /></g>
-              <circle className="vas-flower-core" cx="0" cy="0" r="6" fill="#E8891F" />
+              <g transform="rotate(0)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#E6DCC6" /></g>
+              <g transform="rotate(72)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#E6DCC6" /></g>
+              <g transform="rotate(144)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#E6DCC6" /></g>
+              <g transform="rotate(216)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#E6DCC6" /></g>
+              <g transform="rotate(288)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#E6DCC6" /></g>
+              <circle className="vas-flower-core" cx="0" cy="0" r="6" fill="#946340" />
             </g>
           </g>
         </g>

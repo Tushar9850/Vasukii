@@ -46,8 +46,8 @@ const FAQ_JSON_LD = {
 
 function Chip({ children, tone = "default" }) {
   const tones = {
-    default: "bg-white/5 text-stone-300",
-    good: "bg-emerald-400/15 text-emerald-200",
+    default: "bg-stone-900/5 text-stone-300",
+    good: "bg-emerald-400/15 text-emerald-800",
     warn: "bg-amber-500/15 text-amber-300",
   };
   return (
@@ -61,7 +61,7 @@ function ProductCard({ product, onAdd, qty }) {
   const message = encodeURIComponent(`Hi Vasukii! I'd like to know more about: ${product.name} (${product.price}).`);
   return (
     <Reveal>
-      <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-emerald-900/40 transition-all hover:-translate-y-1 hover:border-emerald-400/50">
+      <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-stone-900/10 bg-emerald-900/40 transition-all hover:-translate-y-1 hover:border-emerald-400/50">
         <div className="relative h-48 w-full overflow-hidden" style={{ backgroundColor: product.tint + "22" }}>
           {product.image ? (
             <img
@@ -83,7 +83,7 @@ function ProductCard({ product, onAdd, qty }) {
         </div>
 
         <div className="flex flex-1 flex-col p-6">
-          <span className="mb-2 inline-block w-fit rounded-full bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-stone-300">
+          <span className="mb-2 inline-block w-fit rounded-full bg-stone-900/5 px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-stone-300">
             {product.category}
           </span>
           <h3 className="mb-1.5 text-lg font-semibold text-stone-50">{product.name}</h3>
@@ -103,8 +103,8 @@ function ProductCard({ product, onAdd, qty }) {
 
           <div className="mt-auto">
             <div className="mb-3 flex items-center justify-between">
-              <span className="font-serif text-lg font-semibold text-emerald-300">{product.price}</span>
-              <span className="text-[11px] text-emerald-300/80">● In stock · Lucknow</span>
+              <span className="font-serif text-lg font-semibold text-emerald-700">{product.price}</span>
+              <span className="text-[11px] text-emerald-700/80">● In stock · Lucknow</span>
             </div>
             <div className="flex items-center gap-2">
               <button
@@ -117,7 +117,7 @@ function ProductCard({ product, onAdd, qty }) {
                 href={`${WHATSAPP}?text=${message}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold text-stone-200 transition-colors hover:border-white/40"
+                className="rounded-full border border-stone-900/20 px-4 py-2 text-xs font-semibold text-stone-200 transition-colors hover:border-stone-900/40"
               >
                 Ask
               </a>
@@ -148,12 +148,12 @@ function Basket({ items, onClose, onQty, onRemove, onClear }) {
   );
 
   const input =
-    "w-full rounded-lg border border-white/15 bg-emerald-950/60 px-3 py-2 text-sm text-stone-50 placeholder-stone-500 focus:border-emerald-400 focus:outline-none";
+    "w-full rounded-lg border border-stone-900/15 bg-emerald-950/60 px-3 py-2 text-sm text-stone-50 placeholder-stone-500 focus:border-emerald-400 focus:outline-none";
 
   return (
     <div className="fixed inset-0 z-50 flex justify-end bg-black/60" onClick={onClose}>
       <aside
-        className="flex h-full w-full max-w-md flex-col border-l border-white/10 bg-emerald-950 p-6"
+        className="flex h-full w-full max-w-md flex-col border-l border-stone-900/10 bg-emerald-950 p-6"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-label="Your basket"
@@ -169,16 +169,16 @@ function Basket({ items, onClose, onQty, onRemove, onClear }) {
           <>
             <ul className="-mr-2 flex-1 space-y-3 overflow-y-auto pr-2">
               {items.map((i) => (
-                <li key={i.name} className="rounded-xl border border-white/10 bg-emerald-900/40 p-3">
+                <li key={i.name} className="rounded-xl border border-stone-900/10 bg-emerald-900/40 p-3">
                   <div className="flex justify-between gap-3">
                     <p className="text-sm font-medium text-stone-50">{i.name}</p>
-                    <span className="text-sm text-emerald-300">{inr(priceNum(i.price) * i.qty)}</span>
+                    <span className="text-sm text-emerald-700">{inr(priceNum(i.price) * i.qty)}</span>
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <button onClick={() => onQty(i.name, i.qty - 1)} className="h-7 w-7 rounded-full border border-white/20 text-stone-100" aria-label="Decrease quantity">−</button>
+                      <button onClick={() => onQty(i.name, i.qty - 1)} className="h-7 w-7 rounded-full border border-stone-900/20 text-stone-100" aria-label="Decrease quantity">−</button>
                       <span className="w-5 text-center text-sm text-stone-50">{i.qty}</span>
-                      <button onClick={() => onQty(i.name, i.qty + 1)} className="h-7 w-7 rounded-full border border-white/20 text-stone-100" aria-label="Increase quantity">+</button>
+                      <button onClick={() => onQty(i.name, i.qty + 1)} className="h-7 w-7 rounded-full border border-stone-900/20 text-stone-100" aria-label="Increase quantity">+</button>
                     </div>
                     <button onClick={() => onRemove(i.name)} className="text-xs text-stone-400 hover:text-amber-300">Remove</button>
                   </div>
@@ -186,7 +186,7 @@ function Basket({ items, onClose, onQty, onRemove, onClear }) {
               ))}
             </ul>
 
-            <div className="mt-4 space-y-2 border-t border-white/10 pt-4">
+            <div className="mt-4 space-y-2 border-t border-stone-900/10 pt-4">
               <input className={input} placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} />
               <input className={input} placeholder="Delivery area in Lucknow (e.g. Gomti Nagar)" value={area} onChange={(e) => setArea(e.target.value)} />
               <input className={input} placeholder="Note (optional)" value={note} onChange={(e) => setNote(e.target.value)} />
@@ -272,7 +272,7 @@ export default function Shop() {
   }, [active, query, sort, maxPrice, petSafeOnly]);
 
   const select =
-    "rounded-full border border-white/15 bg-emerald-950 px-4 py-2 text-xs font-medium text-stone-200 focus:border-emerald-400 focus:outline-none";
+    "rounded-full border border-stone-900/15 bg-emerald-950 px-4 py-2 text-xs font-medium text-stone-200 focus:border-emerald-400 focus:outline-none";
 
   return (
     <>
@@ -299,8 +299,8 @@ export default function Shop() {
       <section className="px-6 pb-10">
         <div className="mx-auto grid max-w-5xl grid-cols-2 gap-3 lg:grid-cols-4">
           {SHOP_TRUST.map((t) => (
-            <div key={t.title} className="rounded-xl border border-white/10 bg-emerald-900/30 p-4">
-              <p className="text-sm font-semibold text-emerald-200">{t.title}</p>
+            <div key={t.title} className="rounded-xl border border-stone-900/10 bg-emerald-900/30 p-4">
+              <p className="text-sm font-semibold text-emerald-800">{t.title}</p>
               <p className="mt-1 text-xs leading-relaxed text-stone-300">{t.body}</p>
             </div>
           ))}
@@ -315,7 +315,7 @@ export default function Shop() {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search plants, pots, tools…"
             aria-label="Search the shop"
-            className="w-full max-w-xs rounded-full border border-white/15 bg-emerald-950 px-4 py-2 text-sm text-stone-50 placeholder-stone-500 focus:border-emerald-400 focus:outline-none"
+            className="w-full max-w-xs rounded-full border border-stone-900/15 bg-emerald-950 px-4 py-2 text-sm text-stone-50 placeholder-stone-500 focus:border-emerald-400 focus:outline-none"
           />
           <select value={sort} onChange={(e) => setSort(e.target.value)} className={select} aria-label="Sort products">
             <option value="featured">Sort: Featured</option>
@@ -345,8 +345,8 @@ export default function Shop() {
               className={
                 "rounded-full border px-4 py-2 text-xs font-medium transition-colors " +
                 (active === c
-                  ? "border-emerald-400 bg-emerald-400/15 text-emerald-200"
-                  : "border-white/15 text-stone-300 hover:border-white/30 hover:text-stone-100")
+                  ? "border-emerald-400 bg-emerald-400/15 text-emerald-800"
+                  : "border-stone-900/15 text-stone-300 hover:border-stone-900/30 hover:text-stone-100")
               }
             >
               {c}
@@ -364,7 +364,7 @@ export default function Shop() {
             <p className="text-stone-300">No products match your filters.</p>
             <button
               onClick={() => { setActive("All"); setQuery(""); setMaxPrice("any"); setPetSafeOnly(false); }}
-              className="mt-4 rounded-full border border-white/20 px-5 py-2 text-xs font-semibold text-stone-200"
+              className="mt-4 rounded-full border border-stone-900/20 px-5 py-2 text-xs font-semibold text-stone-200"
             >
               Clear filters
             </button>
@@ -378,11 +378,11 @@ export default function Shop() {
         )}
       </section>
 
-      <section className="border-t border-white/10 px-6 py-16">
+      <section className="border-t border-stone-900/10 px-6 py-16">
         <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2">
           {SHOP_INFO.map((i) => (
             <Reveal key={i.title}>
-              <div className="h-full rounded-2xl border border-white/10 bg-emerald-900/30 p-6">
+              <div className="h-full rounded-2xl border border-stone-900/10 bg-emerald-900/30 p-6">
                 <h3 className="font-serif text-lg font-semibold text-stone-50">{i.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-stone-300">{i.body}</p>
               </div>
@@ -398,7 +398,7 @@ export default function Shop() {
           </h2>
           <div className="space-y-3">
             {SHOP_FAQ.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-white/10 bg-emerald-900/30 p-4">
+              <details key={f.q} className="group rounded-xl border border-stone-900/10 bg-emerald-900/30 p-4">
                 <summary className="cursor-pointer text-sm font-medium text-stone-50">{f.q}</summary>
                 <p className="mt-2 text-sm leading-relaxed text-stone-300">{f.a}</p>
               </details>
@@ -407,7 +407,7 @@ export default function Shop() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 px-6 py-20 text-center">
+      <section className="border-t border-stone-900/10 px-6 py-20 text-center">
         <Reveal>
           <h2 className="mx-auto max-w-md font-serif text-2xl font-semibold text-stone-50 sm:text-3xl">
             Looking for something not listed here?

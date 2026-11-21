@@ -37,8 +37,8 @@ export default function Blog() {
               className={
                 "rounded-full border px-4 py-2 text-xs font-medium transition-colors " +
                 (active === c
-                  ? "border-emerald-400 bg-emerald-400/15 text-emerald-200"
-                  : "border-white/15 text-stone-300 hover:border-white/30 hover:text-stone-100")
+                  ? "border-emerald-400 bg-emerald-400/15 text-emerald-800"
+                  : "border-stone-900/15 text-stone-300 hover:border-stone-900/30 hover:text-stone-100")
               }
             >
               {c}
@@ -51,7 +51,7 @@ export default function Blog() {
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((post) => (
             <Reveal key={post.title}>
-              <article className="flex h-full flex-col rounded-2xl border border-white/10 bg-emerald-900/40 p-7 transition-all hover:-translate-y-1 hover:border-emerald-400/50">
+              <article className="flex h-full flex-col rounded-2xl border border-stone-900/10 bg-emerald-900/40 p-7 transition-all hover:-translate-y-1 hover:border-emerald-400/50">
                 <span className="mb-4 inline-block w-fit rounded-full bg-amber-500/15 px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-amber-400">
                   {post.category}
                 </span>
@@ -59,7 +59,7 @@ export default function Blog() {
                 <p className="mb-5 flex-1 text-sm leading-relaxed text-stone-300">{post.excerpt}</p>
                 <div className="flex items-center justify-between text-xs text-stone-400">
                   <span>{post.readTime}</span>
-                  <span className="font-medium text-emerald-300">Coming soon</span>
+                  <span className="font-medium text-emerald-700">Coming soon</span>
                 </div>
               </article>
             </Reveal>
@@ -71,7 +71,7 @@ export default function Blog() {
         )}
       </section>
 
-      <section className="border-t border-white/10 px-6 py-20 text-center">
+      <section className="border-t border-stone-900/10 px-6 py-20 text-center">
         <Reveal>
           <h2 className="mx-auto max-w-md font-serif text-2xl font-semibold text-stone-50 sm:text-3xl">
             Full posts are launching alongside our Lucknow rollout.
