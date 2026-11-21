@@ -108,7 +108,7 @@ export function AnimatedPlant() {
       ></div>
 
       <svg viewBox="0 0 300 320" className="relative z-10 h-full w-full max-w-[300px]">
-        <ellipse cx="150" cy="284" rx="66" ry="10" fill="#0A1C13" opacity="0.5" />
+        <ellipse cx="150" cy="284" rx="66" ry="10" fill="#14281D" opacity="0.5" />
 
         <path d="M96,208 L204,208 L190,282 C190,288 180,292 150,292 C120,292 110,288 110,282 Z" fill="#C4703C" />
         <path d="M96,208 L204,208 L198,224 L102,224 Z" fill="#DE9760" />
@@ -153,7 +153,7 @@ export function AnimatedPlant() {
               <g transform="rotate(144)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#F3EEE0" /></g>
               <g transform="rotate(216)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#F3EEE0" /></g>
               <g transform="rotate(288)"><ellipse cx="0" cy="-9" rx="5" ry="9" fill="#F3EEE0" /></g>
-              <circle className="vas-flower-core" cx="0" cy="0" r="6" fill="#E8891F" />
+              <circle className="vas-flower-core" cx="0" cy="0" r="6" fill="#C8734A" />
             </g>
           </g>
         </g>

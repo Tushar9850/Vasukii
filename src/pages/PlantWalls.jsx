@@ -4,7 +4,7 @@ import { PLANT_WALL_PACKAGES, PLANT_WALL_PROCESS } from "../data.js";
 import { WHATSAPP } from "../components/Nav.jsx";
 import SEO from "../components/SEO.jsx";
 
-const GALLERY_TINTS = ["#2E7D4F", "#C4703C", "#3FAE6B", "#9CA39B", "#4CA35A", "#E8891F"];
+const GALLERY_TINTS = ["#2E7D4F", "#C4703C", "#3FAE6B", "#9CA39B", "#4CA35A", "#C8734A"];
 
 export default function PlantWalls() {
   return (
@@ -17,7 +17,7 @@ export default function PlantWalls() {
       <header className="relative overflow-hidden px-6 pb-16 pt-20 sm:pt-24">
         <div
           className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(63,174,107,0.24) 0%, rgba(63,174,107,0) 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(143,185,150,0.22) 0%, rgba(143,185,150,0) 70%)" }}
         ></div>
         <div className="relative mx-auto max-w-3xl text-center">
           <Eyebrow>Design &amp; installation</Eyebrow>

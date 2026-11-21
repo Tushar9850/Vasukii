@@ -37,7 +37,7 @@ export default function Story() {
       <header className="relative overflow-hidden px-6 pb-20 pt-20 sm:pt-24">
         <div
           className="pointer-events-none absolute -left-40 -top-40 h-[520px] w-[520px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(232,137,31,0.16) 0%, rgba(232,137,31,0) 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(200,115,74,0.18) 0%, rgba(200,115,74,0) 70%)" }}
         ></div>
         <div className="relative mx-auto max-w-3xl text-center">
           <Eyebrow>Our story</Eyebrow>

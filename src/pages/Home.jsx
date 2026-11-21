@@ -35,7 +35,7 @@ export default function Home() {
       <header className="relative overflow-hidden px-6 pb-28 pt-20 sm:pt-24">
         <div
           className="pointer-events-none absolute -right-40 -top-52 h-[640px] w-[640px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(63,174,107,0.28) 0%, rgba(63,174,107,0) 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(143,185,150,0.24) 0%, rgba(143,185,150,0) 70%)" }}
         ></div>
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 sm:grid-cols-[1.15fr_0.85fr]">
           <div className="relative">
