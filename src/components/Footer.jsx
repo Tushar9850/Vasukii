@@ -4,7 +4,7 @@ import { WHATSAPP, INSTAGRAM } from "./Nav.jsx";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-stone-900/10 px-6 py-14">
+    <footer className="border-t border-stone-900/10 px-6 py-14 pb-20 md:pb-14">
       <div className="mx-auto flex max-w-6xl flex-wrap items-start justify-between gap-10">
         <div className="flex items-center gap-2.5">
           <img src="/vasukii-logo.png" alt="Vasukii logo" className="h-7 w-auto" />

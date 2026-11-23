@@ -21,8 +21,8 @@ export default {
         },
       },
       fontFamily: {
-        serif: ["Fraunces", "serif"],
-        sans: ["Work Sans", "sans-serif"],
+        serif: ["Fraunces", "Noto Sans Devanagari", "serif"],
+        sans: ["Work Sans", "Noto Sans Devanagari", "sans-serif"],
       },
     },
   },

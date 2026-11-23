@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useT, LangToggle } from "../i18n.jsx";
 
 const WHATSAPP = "https://wa.me/917905611170";
 const INSTAGRAM = "https://instagram.com/vasukii_officials";
 
 const ITEMS = [
-  { to: "/", label: "Home" },
-  { to: "/story", label: "Our Story" },
-  { to: "/what-we-do", label: "What We Do" },
-  { to: "/shop", label: "Shop" },
-  { to: "/plant-walls", label: "Plant Walls" },
-  { to: "/blog", label: "Blog" },
+  { to: "/shop", key: "shop" },
+  { to: "/plant-walls", key: "walls" },
+  { to: "/blog", key: "care" },
+  { to: "/story", key: "about" },
 ];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const { t } = useT();
 
   return (
     <nav className="sticky top-0 z-40 border-b border-stone-900/10 bg-emerald-950/85 backdrop-blur-md">
@@ -34,7 +34,7 @@ export default function Nav() {
                 "transition-colors hover:text-stone-50 " + (isActive ? "text-stone-50" : "text-stone-300")
               }
             >
-              {it.label}
+              {t(it.key)}
             </NavLink>
           ))}
         </div>
@@ -45,8 +45,11 @@ export default function Nav() {
           rel="noopener noreferrer"
           className="hidden rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-emerald-950 lg:inline-block"
         >
-          Message us
+          {t("message")}
         </a>
+
+        <div className="flex items-center gap-3 lg:hidden"><LangToggle /></div>
+        <div className="hidden lg:block"><LangToggle /></div>
 
         <button onClick={() => setOpen(!open)} className="text-stone-200 lg:hidden" aria-label="Toggle menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -65,7 +68,7 @@ export default function Nav() {
               onClick={() => setOpen(false)}
               className="py-2 text-left text-sm text-stone-200"
             >
-              {it.label}
+              {t(it.key)}
             </NavLink>
           ))}
           <a
@@ -74,7 +77,7 @@ export default function Nav() {
             rel="noopener noreferrer"
             className="mt-2 rounded-full bg-emerald-500 px-4 py-2 text-center text-xs font-semibold text-emerald-950"
           >
-            Message us
+            {t("message")}
           </a>
         </div>
       )}
