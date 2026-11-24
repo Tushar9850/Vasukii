@@ -3,6 +3,16 @@ import { Eyebrow, Reveal } from "../components/UI.jsx";
 import { PRODUCTS, SHOP_CATEGORIES, SHOP_TRUST, SHOP_INFO, SHOP_FAQ } from "../data.js";
 import { WHATSAPP } from "../components/Nav.jsx";
 import SEO, { SITE_URL } from "../components/SEO.jsx";
+import { useT, expandQuery } from "../i18n.jsx";
+
+const SITUATIONS = [
+  { id: "low", k: "sLow", test: (p) => /low/i.test(p.light || "") },
+  { id: "pet", k: "sPet", test: (p) => p.petSafe === true },
+  { id: "gift", k: "sGift", test: (p) => p.category === "Combos" || /gift/i.test(p.name) },
+  { id: "puja", k: "sPuja", test: (p) => /tulsi|marigold|gainda|mogra|jasmine|hibiscus|gudhal/i.test(p.name) },
+  { id: "vastu", k: "sVastu", test: (p) => p.category === "Lucky & Vastu" },
+  { id: "under", k: "sUnder", test: (p) => priceNum(p.price) <= 199 },
+];
 
 const priceNum = (p) => Number((p || "").replace(/[^\d]/g, "")) || 0;
 const inr = (n) => "₹" + n.toLocaleString("en-IN");
@@ -58,6 +68,7 @@ function Chip({ children, tone = "default" }) {
 }
 
 function ProductCard({ product, onAdd, qty }) {
+  const { t } = useT();
   const message = encodeURIComponent(`Hi Vasukii! I'd like to know more about: ${product.name} (${product.price}).`);
   return (
     <Reveal>
@@ -68,11 +79,13 @@ function ProductCard({ product, onAdd, qty }) {
               src={product.image}
               alt={product.name}
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
             />
           ) : (
-            <div className="flex h-full items-center justify-center">
-              <div className="h-16 w-16 rounded-full" style={{ backgroundColor: product.tint }}></div>
+            <div className="flex h-full flex-col items-center justify-center gap-2 px-4 text-center">
+              <div className="h-12 w-12 rounded-full" style={{ backgroundColor: product.tint }}></div>
+              <span className="text-xs text-stone-400">{t("noPhoto")}</span>
             </div>
           )}
           {product.badge && (
@@ -111,7 +124,7 @@ function ProductCard({ product, onAdd, qty }) {
                 onClick={() => onAdd(product)}
                 className="flex-1 rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-emerald-950 transition-transform hover:-translate-y-0.5"
               >
-                {qty > 0 ? `Add another (${qty} in basket)` : "Add to basket"}
+                {qty > 0 ? `${t("addMore")} (${qty} ${t("inBasket")})` : t("add")}
               </button>
               <a
                 href={`${WHATSAPP}?text=${message}`}
@@ -119,7 +132,7 @@ function ProductCard({ product, onAdd, qty }) {
                 rel="noopener noreferrer"
                 className="rounded-full border border-stone-900/20 px-4 py-2 text-xs font-semibold text-stone-200 transition-colors hover:border-stone-900/40"
               >
-                Ask
+                {t("ask")}
               </a>
             </div>
           </div>
@@ -130,13 +143,15 @@ function ProductCard({ product, onAdd, qty }) {
 }
 
 function Basket({ items, onClose, onQty, onRemove, onClear }) {
+  const { t } = useT();
+  const [giftMsg, setGiftMsg] = useState("");
   const [name, setName] = useState("");
   const [area, setArea] = useState("");
   const [note, setNote] = useState("");
 
   const subtotal = items.reduce((t, i) => t + priceNum(i.price) * i.qty, 0);
   const deliveryFee = subtotal >= FREE_DELIVERY_ABOVE || subtotal === 0 ? 0 : DELIVERY_FEE;
-  const delivery = deliveryFee === 0 ? "Free" : inr(deliveryFee);
+  const delivery = deliveryFee === 0 ? t("free") : inr(deliveryFee);
   const total = subtotal + deliveryFee;
 
   const orderText = encodeURIComponent(
@@ -144,6 +159,7 @@ function Basket({ items, onClose, onQty, onRemove, onClear }) {
       items.map((i) => `• ${i.name} × ${i.qty} — ${inr(priceNum(i.price) * i.qty)}`).join("\n") +
       `\n\nSubtotal: ${inr(subtotal)}\nDelivery: ${delivery}\nTotal: ${inr(total)}` +
       `\n\nName: ${name || "—"}\nDelivery area (Lucknow): ${area || "—"}` +
+      (giftMsg ? `\nGift message: ${giftMsg}` : "") +
       (note ? `\nNote: ${note}` : "")
   );
 
@@ -159,7 +175,7 @@ function Basket({ items, onClose, onQty, onRemove, onClear }) {
         aria-label="Your basket"
       >
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="font-serif text-2xl font-semibold text-stone-50">Your basket</h2>
+          <h2 className="font-serif text-2xl font-semibold text-stone-50">{t("yourBasket")}</h2>
           <button onClick={onClose} aria-label="Close basket" className="text-2xl text-stone-300 hover:text-stone-50">×</button>
         </div>
 
@@ -180,24 +196,25 @@ function Basket({ items, onClose, onQty, onRemove, onClear }) {
                       <span className="w-5 text-center text-sm text-stone-50">{i.qty}</span>
                       <button onClick={() => onQty(i.name, i.qty + 1)} className="h-7 w-7 rounded-full border border-stone-900/20 text-stone-100" aria-label="Increase quantity">+</button>
                     </div>
-                    <button onClick={() => onRemove(i.name)} className="text-xs text-stone-400 hover:text-amber-300">Remove</button>
+                    <button onClick={() => onRemove(i.name)} className="text-xs text-stone-400 hover:text-amber-300">{t("remove")}</button>
                   </div>
                 </li>
               ))}
             </ul>
 
             <div className="mt-4 space-y-2 border-t border-stone-900/10 pt-4">
-              <input className={input} placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} />
-              <input className={input} placeholder="Delivery area in Lucknow (e.g. Gomti Nagar)" value={area} onChange={(e) => setArea(e.target.value)} />
-              <input className={input} placeholder="Note (optional)" value={note} onChange={(e) => setNote(e.target.value)} />
+              <input className={input} placeholder={t("name")} value={name} onChange={(e) => setName(e.target.value)} />
+              <input className={input} placeholder={t("area")} value={area} onChange={(e) => setArea(e.target.value)} />
+              <input className={input} placeholder={t("gift")} value={giftMsg} onChange={(e) => setGiftMsg(e.target.value)} />
+              <input className={input} placeholder={t("note")} value={note} onChange={(e) => setNote(e.target.value)} />
             </div>
 
             <div className="mt-4 space-y-1 text-sm">
-              <div className="flex justify-between text-stone-300"><span>Subtotal</span><span>{inr(subtotal)}</span></div>
-              <div className="flex justify-between text-stone-300"><span>Delivery (Lucknow)</span><span>{delivery}</span></div>
-              <div className="flex justify-between font-semibold text-stone-50"><span>Total</span><span>{inr(total)}</span></div>
+              <div className="flex justify-between text-stone-300"><span>{t("subtotal")}</span><span>{inr(subtotal)}</span></div>
+              <div className="flex justify-between text-stone-300"><span>{t("delivery")}</span><span>{delivery}</span></div>
+              <div className="flex justify-between font-semibold text-stone-50"><span>{t("total")}</span><span>{inr(total)}</span></div>
               <p className="pt-1 text-xs text-stone-400">
-                Delivery {inr(DELIVERY_FEE)}, free on orders of {inr(FREE_DELIVERY_ABOVE)}+. No payment now — we confirm availability and the final amount on WhatsApp first.
+                {t("deliveryNote", inr(DELIVERY_FEE), inr(FREE_DELIVERY_ABOVE))}
               </p>
             </div>
 
@@ -207,9 +224,9 @@ function Basket({ items, onClose, onQty, onRemove, onClear }) {
               rel="noopener noreferrer"
               className="mt-4 block rounded-full bg-emerald-500 px-6 py-3.5 text-center text-sm font-semibold text-emerald-950"
             >
-              Send order on WhatsApp →
+              {t("send")}
             </a>
-            <button onClick={onClear} className="mt-2 text-xs text-stone-400 hover:text-stone-200">Clear basket</button>
+            <button onClick={onClear} className="mt-2 text-xs text-stone-400 hover:text-stone-200">{t("clear")}</button>
           </>
         )}
       </aside>
@@ -218,6 +235,8 @@ function Basket({ items, onClose, onQty, onRemove, onClear }) {
 }
 
 export default function Shop() {
+  const { t } = useT();
+  const [situation, setSituation] = useState(null);
   const [active, setActive] = useState("All");
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("featured");
@@ -257,10 +276,12 @@ export default function Shop() {
   const qtyOf = (name) => cart.find((i) => i.name === name)?.qty || 0;
 
   const visible = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = expandQuery(query.trim());
+    const sit = SITUATIONS.find((x) => x.id === situation);
     let list = PRODUCTS.filter((p) => {
       if (active !== "All" && p.category !== active) return false;
-      if (q && !(`${p.name} ${p.blurb} ${p.category}`.toLowerCase().includes(q))) return false;
+      if (sit && !sit.test(p)) return false;
+      if (q.trim() && !q.trim().split(/\s+/).some((w) => `${p.name} ${p.blurb} ${p.category}`.toLowerCase().includes(w))) return false;
       if (maxPrice !== "any" && priceNum(p.price) > Number(maxPrice)) return false;
       if (petSafeOnly && p.petSafe !== true) return false;
       return true;
@@ -269,7 +290,7 @@ export default function Shop() {
     if (sort === "high") list = [...list].sort((a, b) => priceNum(b.price) - priceNum(a.price));
     if (sort === "az") list = [...list].sort((a, b) => a.name.localeCompare(b.name));
     return list;
-  }, [active, query, sort, maxPrice, petSafeOnly]);
+  }, [active, query, sort, maxPrice, petSafeOnly, situation]);
 
   const select =
     "rounded-full border border-stone-900/15 bg-emerald-950 px-4 py-2 text-xs font-medium text-stone-200 focus:border-emerald-400 focus:outline-none";
@@ -313,7 +334,7 @@ export default function Shop() {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search plants, pots, tools…"
+            placeholder={t("search")}
             aria-label="Search the shop"
             className="w-full max-w-xs rounded-full border border-stone-900/15 bg-emerald-950 px-4 py-2 text-sm text-stone-50 placeholder-stone-500 focus:border-emerald-400 focus:outline-none"
           />
@@ -333,6 +354,25 @@ export default function Shop() {
             <input type="checkbox" checked={petSafeOnly} onChange={(e) => setPetSafeOnly(e.target.checked)} className="accent-emerald-500" />
             Pet-safe only
           </label>
+        </div>
+      </section>
+
+      <section className="px-6 pb-3">
+        <p className="mb-2 text-center text-xs text-stone-400">{t("shopFor")}</p>
+        <div className="mx-auto flex max-w-5xl flex-wrap justify-center gap-2.5">
+          {SITUATIONS.map((x) => (
+            <button
+              key={x.id}
+              onClick={() => setSituation(situation === x.id ? null : x.id)}
+              aria-pressed={situation === x.id}
+              className={
+                "min-h-10 rounded-full border px-4 py-2 text-xs font-medium transition-colors " +
+                (situation === x.id ? "border-emerald-600 bg-emerald-600 text-white" : "border-stone-900/15 text-stone-200 hover:border-stone-900/30")
+              }
+            >
+              {t(x.k)}
+            </button>
+          ))}
         </div>
       </section>
 
@@ -363,7 +403,7 @@ export default function Shop() {
           <div className="mx-auto max-w-md text-center">
             <p className="text-stone-300">No products match your filters.</p>
             <button
-              onClick={() => { setActive("All"); setQuery(""); setMaxPrice("any"); setPetSafeOnly(false); }}
+              onClick={() => { setActive("All"); setQuery(""); setMaxPrice("any"); setPetSafeOnly(false); setSituation(null); }}
               className="mt-4 rounded-full border border-stone-900/20 px-5 py-2 text-xs font-semibold text-stone-200"
             >
               Clear filters
